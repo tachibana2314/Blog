@@ -7,9 +7,9 @@ services:
       context: ./docker/web/nginx
       dockerfile: ./Dockerfile
     ports:
-      - ${WEB_PORT}:80
+      # - ${WEB_PORT}:80
       # SSL
-      # - ${WEB_PORT}:443
+      - ${WEB_PORT}:443
     volumes:
       - ./docker/web/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker/web/nginx/volumes/log:/var/log/nginx
@@ -50,4 +50,3 @@ services:
     restart: always
     volumes:
       - ./docker/redis/data:/data
-    container_name: redis
