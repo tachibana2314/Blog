@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+/* ! CSSの構成 独自共通要素 ==================================================
+
+レイアウト_黄金比率
+
+-------------------------------------------------- */
+
+
+
+/* ! レイアウト共通
+------------------------------------------------------------ */
+[class*="l_"] {
+  position: relative;
+}
+
+
+
+/* ! レイアウト_黄金比率
+------------------------------------------------------------ */
+.l_gold {
+  display: flex;
+}
+.l_rectangle {
+  width: 38%;
+}
+.l_square {
+  width: 62%;
+}
+.l_square:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+
+
+
+/* !レスポンシブ　================================================= */
+@media screen and (max-width: 725px){
+  .list_feature {
+	margin: -15px;
+}
+  .list_feature > li {
+	padding: 15px;
+}
+	.list_feature .ttl {
+	font-size: 16px;
+}
+  .list_feature .description {
+	font-size: 12px;
+}
+}
+@media screen and (max-width: 640px){
+  .list_feature {
+	flex-direction: column;
+}
+	.list_feature .text {
+  margin: 0 auto;
+}
+	.list_feature > li {
+	flex: 1 1 auto;
+  width: 100%;
+}
+	.list_feature article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+	.list_feature .img {
+  margin-right: 20px;
+  flex: 0 0 100px;
+}
+	.list_feature .ttl {
+	text-align: left;
+}
+  .list_feature .description {
+	text-align: left;
+}
+}
+@media screen and (max-width: 480px){
+  .body_feature {
+  margin: 40px 0 0;
+}
+  .list_feature article {
+	flex-direction: column;
+}  
+  .list_feature .img {
+	margin: 30px;
+}
+  .list_feature .ttl {
+	font-size: 16px;
+	text-align: center;
+}
+}
+
+/* レイアウト比率のみ */
+.l_ratio {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 10px;
+}
+.l_ratio > * {
+  position: relative;
+}
+.l_ratio > *:nth-of-type(1) {
+  width: 38%;
+}
+.l_ratio > *:nth-of-type(2) {
+  width: 62%;
+  padding: 80px 40px 80px 0;
+}
+
+
+
+/* ! レイアウト_２カラム
+------------------------------------------------------------ */
+.l_aside_main {
+  display: flex;
+}
+.l_aside{
+  width: 14.44%;
+}
+.l_main{
+  width: 85.56%;
+  padding: 80px 40px 80px 0;
+}
+
+
+
+/* !レスポンシブ　================================================= */
+@media screen and (max-width: 850px){
+  .body_plans {
+    padding: 20px 10px 20px;
+  }
+.head_plans .ttl {
+	font-size: 18px;
+}
+.body_plans .ttl strong {
+	font-size: 30px;
+}
+
+.foot_plans .description {
+	font-size: 12px;
+	margin: 45px 0 0 ;
+}
+}
+@media screen and (max-width: 768px){
+  .list_plans{
+    margin: 60px -10px 0;
+  }
+.body_plans > .ttl {
+  font-size: 15px;
+}
+.list_plans .self > .or {
+	top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.list_plans .self .or_eng {
+	font-size: 20px;
+}
+}
+@media screen and (max-width: 640px){
+  .head_plans .ttl {
+  	font-size: 16px;
+  }
+  .body_plans {
+    padding: 16px 10px 16px;
+  }
+  .body_plans .ttl strong {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 576px){
+  .list_plans > li{
+    width: 100%;
+  }
+  .list_plans > li + li{
+    margin: 10px 0 0;
+  }
+  .list_plans {
+  	margin: 60px 0px 0;
+  }
+}
+@media screen and (max-width: 480px){
+.head_plans {
+  padding: 10px;
+}
+.head_plans .ttl {
+  font-size: 16px;
+}
+.body_plans > .ttl {
+  font-size: 13px;
+}
+
+.list_plans > li {
+	padding: 0px;
+}
+
+.list_plans .entrust:before {
+  height: 60px;
+  width: 80px;
+}
+.foot_plans .description {
+	margin: 20px 0 0 ;
+}
+
+
+/* ! ページテキスト ================================================== */
+[class*="page_text"] {
+  font: bold 13px/1em 'futura-pt-bold','noto sans japanese';
+  letter-spacing: .12em;
+  position: absolute;
+  margin: 0 0 0 -1.5px;
+  top: 80px;
+  z-index: 1;
+}
+[class*="page_text"][class*="white"] {
+  color: #fff;
+}
+
+
+/* レフト */
+[class*="page_text"][class*="left"] {
+  left: 40px;
+  transform : rotate(-90deg) translate(-100%,50%);
+  transform-origin : left center;
+}
+[class*="page_text"][class*="left"][class*="center"] {
+  top: 50%;
+  transform : rotate(-90deg) translate(-50%,50%);
+}
+
+
+/* ライト */
+[class*="page_text"][class*="right"] {
+  right: 40px;
+  transform : rotate(-90deg);
+  transform-origin : right center;
+}
+[class*="page_text"][class*="right"][class*="center"] {
+  top: 50%;
+  transform : rotate(-90deg) translate(50%, -50%);
+}
+
+
+
+
+
+/* ! 独自共通コンテンツC ================================================== */
