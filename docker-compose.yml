@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  #ウェブサーバコンテナ (Nginx)
+  web:
+    build:
+      context: ./docker/web/nginx
+      dockerfile: ./Dockerfile
+    ports:
+      # - ${WEB_PORT}:80
+      # SSL
+      - ${WEB_PORT}:443
+    volumes:
+      - ./docker/web/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/web/nginx/volumes/log:/var/log/nginx
+      - ./src/public:/var/www/html/public:cached
+    links:
+      - app
+  #PHPコンテナ
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/php-fpm/Dockerfile
+    volumes:
+      - ./src:/var/www/html:cached
+    links:
+      - db
+      - smtp
+  # データベースコンテナ (MySQL)
+  db:
+    build:
+      context: ./docker/db/mysql
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./docker/db/mysql/volumes/data:/var/lib/mysql
+      - ./docker/db/mysql/volumes/log:/var/log
+    ports:
+      - ${DB_PORT}:3306
+  # smtpコンテナ
+  smtp:
+    build: ./docker/smtp/mailhog
+    ports:
+      - ${SMTP_PORT}:8025
+
+  #Redis
+  redis:
+    build:
+      context: ./docker/redis
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - ./docker/redis/data:/data
