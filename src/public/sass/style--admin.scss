@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+Foundation [サイト全体のデフォルトスタイル]
+-------------------------------------------------- */
+@import "admin/foundation/variable/_v-mediaQuery";
+@import "admin/foundation/variable/_v-controlItem";
+@import "admin/foundation/variable/_v-color";
+@import "admin/foundation/variable/_v-scale";
+@import "admin/foundation/_reset";
+@import "admin/foundation/_base";
+/* ! --------------------------------------------------
+Layout [各ページを構成するサイト全体で共通したエリア]
+-------------------------------------------------- */
+@import "admin/layout/_l-body";
+@import "admin/layout/_l-base";
+@import "admin/layout/_l-header";
+@import "admin/layout/_l-sidebar";
+@import "admin/layout/_l-main";
+@import "admin/layout/_l-container";
+@import "admin/layout/_l-page";
+@import "admin/layout/_l-overview"; //右からスライド式で出てくる概要
+@import "admin/layout/_l-edit";
+@import "admin/layout/_l-footer";
+@import "admin/layout/_l-box";
+@import "admin/layout/_l-12";
+/* ! --------------------------------------------------
+Object [サイト全体で再利用できるパターンを持つモジュール]
+-------------------------------------------------- */
+/* ! Component [小さな単位のモジュールを管理] ------------------------- */
+@import "admin/object/component/_c-heading";
+@import "admin/object/component/_c-button";
+@import "admin/object/component/_c-link"; //インラインリンク
+@import "admin/object/component/_c-image";
+@import "admin/object/component/_c-input";
+@import "admin/object/component/_c-text";
+@import "admin/object/component/_c-number"; //数字表記の箇所
+@import "admin/object/component/_c-editor";
+@import "admin/object/component/_c-status"; //ステータス
+@import "admin/object/component/_c-labelStatus"; //ステータス（ラベル型）
+@import "admin/object/component/_c-plan"; //会員プラン表示
+/* ! Project [Componentと、他の要素によって構成される大きな単位のモジュール] ------------------------- */
+@import "admin/object/project/_p-header";
+@import "admin/object/project/_p-alertMenu";//アラート
+@import "admin/object/project/_p-sidebar";
+@import "admin/object/project/_p-sidebarDetail";
+@import "admin/object/project/_p-footer";
+@import "admin/object/project/_p-box";
+@import "admin/object/project/_p-boxDetail";
+@import "admin/object/project/_p-overview";
+@import "admin/object/project/_p-tableSet";
+@import "admin/object/project/_p-table";
+@import "admin/object/project/_p-filter";
+@import "admin/object/project/_p-selectDate"; //テーブル上部の日付の選択
+@import "admin/object/project/_p-input";
+@import "admin/object/project/_p-formError";
+@import "admin/object/project/_p-creditCard"; //クレジットカード
+@import "admin/object/project/_p-pagination";
+@import "admin/object/project/_p-scroll";
+@import "admin/object/project/_p-login";
+@import "admin/object/project/_p-list";
+@import "admin/object/project/_p-itemList"; //商品リスト
+@import "admin/object/project/_p-user"; //ユーザー情報
+@import "admin/object/project/_p-text"; //テキストを並べる
+@import "admin/object/project/_p-countList"; //ラベル ---- カウント形式のリスト
+@import "admin/object/project/_p-fromTo"; //どこからどこまで
+@import "admin/object/project/_p-button"; //アイコンありのボタン
+@import "admin/object/project/_p-hideMenu"; //隠しメニュー（ドット押下）
+@import "admin/object/project/_p-flashMessage"; //フラッシュメッセージ
+@import "admin/object/project/_p-photoList";//写真リスト
+@import "admin/object/project/_p-buttonWrap"; //ボタンエリア
+@import "admin/object/project/_p-dashboard"; // ダッシュボード
+@import "admin/object/project/_p-machineCount"; // マシン
+@import "admin/object/project/_p-machineSize"; // マシンサイズ
+@import "admin/object/project/_p-webPosting"; // web掲載
+@import "admin/object/project/_p-log"; // ログ（仕入れ・）
+@import "admin/object/project/_p-review"; // レビュー
+@import "admin/object/project/_p-userList"; //ユーザーリスト（スタッフが紹介した顧客)
+@import "admin/object/project/_p-page"; //一覧ページ・
+@import "admin/object/project/_p-stamp"; //打刻
+@import "admin/object/project/_p-photoSwipe"; //写真拡大
+@import "admin/object/project/_p-summary"; //サマリー[SUM]表
+@import "admin/object/project/_p-attendanceApproval"; //勤怠承認確認
+@import "admin/object/project/_p-attendanceTransport"; //移動経費
+@import "admin/object/project/_p-batchAction"; //一括処理・バッチ処理
+@import "admin/object/project/_p-calendar"; // カレンダー（従業員詳細）
+@import "admin/object/project/_p-memo"; // メモ
+@import "admin/object/project/_p-dataList"; // 料金・金額の表示など
+/* ! Utility [ComponentとProjectのモディファイア（パターン）で解決することができないスタイル] ------------------------- */
+@import "admin/object/utility/_u-mt"; //マージントップ
+/* ! Theme [テーマによる色の切り替えなど、ページ単位の色違いなど] ------------------------- */
+/* ! Library [ライブラリ] ------------------------- */
+@import "admin/object/library/_trumbowyg.scss"; //スタッフが紹介した顧客
+@import "admin/object/library/_remodal-default-theme.scss"; //モーダル
+@import "admin/object/library/_remodal.scss"; //モーダル
+@import "admin/object/library/_photoswipe.scss"; //写真拡大1
+@import "admin/object/library/_default-skin.scss"; //写真拡大2
+@import "admin/object/library/select2/_core.scss"; //セレクト2
+@import "admin/object/library/fullcalendar/main.min.scss"; //セレクト2
+
+/* ! ==================================================
+
+- ファイル名、クラス名なるべくは省略しない button title text image
+-
+
+================================================== */

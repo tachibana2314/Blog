@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- ボックス
+
+-------------------------------------------------- */
+.p-box {
+  padding: 40px;
+  width: 100%;
+  //見出し
+  &__head {
+    display: flex;
+    align-items: center;
+    margin: 0 0 16px;
+    > [class*="c-button"] {
+      margin: 0 0 0 auto;
+    }
+  }
+  &__tab {
+    margin: 0 0 24px;
+    &__list {
+      display: flex;
+      .c-button {
+        min-width: 120px;
+      }
+    }
+  }
+  //フィルター
+  &__filter {
+    margin: 0 0 16px;
+  }
+  //コンテンツ
+  &__body {
+    
+  }
+}

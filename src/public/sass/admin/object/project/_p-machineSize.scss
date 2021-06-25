@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- リスト
+
+================================================== */
+/* ! --------------------------------------------------
+
+- リスト
+
+-------------------------------------------------- */
+.p-machineSize {
+  display: flex;
+  &__image {
+    flex: 0 0 40px;
+    margin: 0 16px 0 0;
+  } 
+  &__text {
+    flex: auto;
+    min-width: 0;
+  }
+  &__list {
+    @extend %c-text__lv6;
+    margin: 0 0 8px;
+    > li {
+      &:before {
+        display: inline-block;
+        width: 24px;
+        text-align: right;
+        margin: 0 8px 0 0;
+      }
+    }
+    &__width {
+      &:before {
+        content: "W：";
+      }
+    }
+    &__depth {
+      &:before {
+        content: "D：";
+      }
+    }
+    &__height {
+      &:before {
+        content: "H：";
+      }
+    }
+  } 
+}

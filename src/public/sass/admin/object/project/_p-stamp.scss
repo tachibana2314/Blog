@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 打刻表示
+
+-------------------------------------------------- */
+.p-stamp {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  padding: 0 0 0 24px;
+  margin: -2px;
+  &:before {
+    content: attr(data-stamp-type);
+    color: #fff;
+    @extend %c-text__lv6;
+    @extend %c-text__weight--700;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background: color(main);
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  &[data-stamp-type="休"],
+  &[data-stamp-type="中"],
+  &[data-stamp-type="総"],
+  &[data-stamp-type="労"] {
+    &:before {
+      color: color(main);
+      border-color: color(main);
+      background: #fff;
+    }
+  }
+  &--column {
+    flex-direction: column;
+    align-items: flex-start;
+    @at-root {
+      .p-stamp {
+        &__plan {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+  > * {
+    margin: 2px;
+  }
+  &__time {
+    @extend %c-number__lv5;
+    line-height: 1em;
+    .unit {
+      @extend %c-text__lv6;
+      line-height: 1em;
+    }
+  }
+  &__plan {
+    @extend %c-text__note;
+    line-height: 1em;
+    padding: 2px 0 0;
+  }
+}
+.stamp_list_item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .c-button--delete {
+    display: block;
+    padding: 0;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0px;
+  }
+}

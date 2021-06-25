@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- Web掲載
+
+-------------------------------------------------- */
+.p-webPosting {
+  &__photoList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+    > li {
+      width: 25%;
+      padding: 4px;
+    }
+  }
+}

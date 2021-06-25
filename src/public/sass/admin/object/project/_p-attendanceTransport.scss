@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 勤怠承認確認
+
+-------------------------------------------------- */
+.p-attendanceTransport {
+  &__head {
+    margin: 0 0 40px;
+    input {
+      font-size: 24px !important;
+      font-weight: 700;
+      color: color(title) !important;
+    }
+  }
+  &__list {
+    > li {
+      padding: 24px 0;
+    }
+  }
+  &__item {
+    position: relative;
+    .c-button--remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      transform: translate(50% , -25%);
+      display: none;      
+      .cloneContent & {
+        display: block;
+      }
+    }
+    .p-input__list {
+      flex: auto;
+      min-width: 0;
+    }
+    //やじるし
+    &__arrow {
+      background: url(../img/admin/p-fromTo/arrow.svg);
+      background-size: 24px 24px !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      height: 64px;
+      width: 100%;
+      border-radius: 3px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- フィルター
+
+-------------------------------------------------- */
+.p-filter {
+  padding: 8px;
+  border-radius: 4px;
+  background: color(background);
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+  &__body {
+    flex: auto;
+    min-width: 0; 
+    transition: all 0.2s ease;
+//     height: 32px;
+/*
+    .p-filter:hover & {
+      height: auto;
+    }
+*/
+  }
+  &__action {
+    flex: 0 0 88px;
+    margin: 0 0 0 16px;
+    display: flex;
+    align-items: center;
+    .c-button {
+      padding: 0 8px;
+    }
+    &--wide {
+      flex: 0 0 140px;    
+    }
+  }
+  &__list {
+    $gapMargin: -2px -8px;
+    $gapPadding: 2px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: $gapMargin;
+    &__item {
+      padding: $gapPadding;
+      display: flex;
+      align-items: flex-start;
+      &--full {
+        width: 100%;
+      }
+      &--right {
+        margin: 0 0 0 auto;
+      }
+      &__label {
+        @extend %c-text__note;
+        margin: 0 8px 0 0;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        flex: none;
+      }
+      &__data {
+        display: flex;
+        align-items: center;
+        .c-input {
+          + .c-input {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

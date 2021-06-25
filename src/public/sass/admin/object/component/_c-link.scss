@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- リンク（基本インライン箇所）
+
+-------------------------------------------------- */
+.c-link {
+  display: inline-flex;
+  position: relative;
+  &:hover {  
+    color: color(form--high);
+  }
+  &--external {
+    padding: 0 24px 0 0;
+    &:before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url(../img/admin/c-button/external.svg);
+      background-size: 16px 16px !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      transition: all 0.1s ease;
+    }
+    &:hover {
+      &:before {
+        background: url(../img/admin/c-button/external--active.svg);
+      }
+    }
+  }
+  &--edit {
+    padding: 0 24px 0 0;
+    &:before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url(../img/admin/c-button/edit--outline.svg);
+      background-size: 16px 16px !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      transition: all 0.1s ease;
+    }
+    &:hover {
+      &:before {
+        background: url(../img/admin/c-button/edit--filled--active.svg);
+      }
+    }
+  }
+}

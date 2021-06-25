@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 詳細ページサイドバー
+
+-------------------------------------------------- */
+.p-sidebarDetail {
+  flex: auto;
+  min-width: 0;
+  border-right: 1px solid color(line);
+  &__back {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid map-get($colors,line);
+    padding: 0 16px;
+  }
+  &__main {
+    height: calc((100vh - 48px - 56px));
+    overflow: auto;
+    padding: 16px 16px 60px;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 2px;
+      background: #F2F4F7;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background: #0A237211;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background: #0A2372;
+    }
+    &__user {     
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid map-get($colors,background);
+      padding: 0 0 16px;
+      .c-image {
+        width: 100px;
+        margin: 0 auto 8px;
+      }
+    }
+    &__shop {
+      border-bottom: 1px solid map-get($colors,background);
+      padding: 0 0 16px;
+      .c-image {
+        width: 100%;
+        margin: 0 0 8px;
+      }
+    }
+    &__contents { //各コンテンツを入れる箱
+      padding: 16px 0;
+      & + & {
+        border-top: 1px solid map-get($colors,background);
+      }
+      &__head {
+        display: flex;
+        margin: 0 0 16px;
+        .p-buttonArea {
+          margin: 0 0 0 auto;
+        }
+      }
+      &__body {
+        
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+<p>
+  {!!$content->body!!}
+</p>

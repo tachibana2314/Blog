@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- ログ
+
+-------------------------------------------------- */
+.p-log {
+  &__list {
+    &__item {
+      position: relative;
+      border-bottom: 1px solid color(background);
+      padding: 4px 0 2px;
+      &:before {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        background: map-get($colors,form);
+        border-radius: 100px;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        transform: translate(-50% , -50%);
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 100%;
+        background: map-get($colors,form);
+        transform: translate(-50% ,0);
+        position: absolute;
+        top: 12px;
+        left: 0;
+      }
+      &:last-of-type {
+        &:after {
+          content: none;
+        }
+      }
+      &__head {
+        display: flex;
+        align-items: baseline;
+        padding: 0 0 0 8px;
+        //表示非表示
+        &.js-trigger__log {
+          cursor: pointer;
+          padding-right: 16px;
+          position: relative;
+          &:before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 24px;
+            background: url(../img/admin/c-button/down.svg);
+            background-size: 16px 16px !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+        &__title {
+          @extend %c-text__lv6;
+        }
+        &__right {
+          margin: 0 0 0 auto;
+        }
+        .count {
+          width: 32px;
+          text-align: right;
+          &__item {
+            
+          }
+        }
+      }
+      &__body {
+        margin: 4px 0 0;
+        background: map-get($colors,background);
+        padding: 8px;
+        display: none;
+        .p-list {
+          > li {
+            + li {
+              margin: 12px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

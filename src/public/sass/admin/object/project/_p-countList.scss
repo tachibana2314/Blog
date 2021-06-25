@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- カウントリスト
+
+-------------------------------------------------- */
+.p-countList {
+  display: flex;
+  flex-direction: column;
+  > li {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: color(background);
+      position: absolute;
+      top: .6em;
+      left: 0;
+    }
+    + li {
+      margin: 8px 0 0;
+    }
+  }
+  &__label {
+    color: map-get($colors,second);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+    margin: 0 0 4px;
+    background: #fff;
+    padding-right: 8px;
+    position: relative;
+  }
+  &__data {
+    font-size: 14px;
+    background: #fff;
+    padding-left: 8px;
+    position: relative;
+  }
+}

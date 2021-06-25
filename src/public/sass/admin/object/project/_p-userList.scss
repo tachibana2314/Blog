@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ユーザーリスト
+
+================================================== */
+.p-userList {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    > li {
+      padding: 8px 0 4px;
+      border-bottom: 1px solid map-get($colors,background);
+      &:first-of-type{
+        padding-top: 0;
+      }
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      //ユーザー表示
+      &__user {
+        display: flex;
+        align-items: center;
+        margin: 0 16px 0 0;
+        .c-image {
+          width: 32px;
+          margin: 0 8px 0 0;
+        }
+        &__text {
+          flex: none;
+          .id {
+            line-height: 1em;
+          }
+        }
+        &__data {
+          flex: auto;
+          min-width: 0;
+        }
+      }
+    }
+  }
+}

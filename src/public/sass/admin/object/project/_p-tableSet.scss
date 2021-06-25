@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- テーブルセット
+
+================================================== */
+/* ! --------------------------------------------------
+
+- テーブルセット
+
+-------------------------------------------------- */
+.p-tableSet {
+  &__head {
+    padding: 4px 0;
+    display: flex;
+    .p-buttonArea {
+      margin: 0 0 0 auto;
+    }
+  }
+  &__foot {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    .p-pagination {
+      margin: 0 0 0 auto;
+    }
+    .p-buttonArea {
+      margin: 0 0 0 auto;
+    }
+  }
+  // 全 ○○ 件中 1～○○ 件目
+  &__place {
+    &__count {
+      color: map-get($colors,second);
+      font-size: 12px;
+    }
+  }
+  // ステータスの説明
+  &__statusLegend {
+    display: flex;
+    margin: 0 0 0 auto;
+    .c-status {
+      color: color(second);
+      font-size: 11px;
+      line-height: 1em;
+      height: 1em;
+      padding: 0 0 0 16px;
+      margin: 0 0 0 16px;
+      &:before {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}

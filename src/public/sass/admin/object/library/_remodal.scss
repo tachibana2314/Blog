@@ -1,0 +1,207 @@
+/*
+ *  Remodal - v1.1.1
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+
+/* ==========================================================================
+   Remodal's necessary styles
+   ========================================================================== */
+
+/* Hide scroll bar */
+html.remodal-is-locked {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+/* Anti FOUC */
+.remodal,
+[data-remodal-id] {
+  display: none;
+}
+
+/* Necessary styles of the overlay */
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  display: none;
+}
+
+/* Necessary styles of the wrapper */
+.remodal-wrapper {
+  min-height: 750px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 10000;
+  top: 8px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  margin: 0 0 40px;
+  display: none;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  &:after {
+    display: inline-block;
+    height: 100%;
+    margin-left: -0.05em;  
+    content: "";
+  }
+}
+
+/* Fix iPad, iPhone glitches */
+.remodal-overlay,
+.remodal-wrapper {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Necessary styles of the modal dialog */
+.remodal {
+  position: relative;
+  outline: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.remodal-is-initialized {
+  /* Disable Anti-FOUC */
+  display: inline-block;
+}
+
+.p-remodal {
+  max-height: 100%;
+  margin: 0 auto;
+  background: transparent;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  $modalPadding: 24px;
+  display: none;
+  .remodal-is-opened & {
+    display: inline-flex;  
+  }
+  &__layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid color(line);
+    box-shadow: 0px 2px 12px -4px #9c9faa65;
+    background: #fff;
+  }
+  &__scroll {
+    max-height: 100%;
+    overflow: auto;
+    flex: auto;
+    min-width: 0;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 2px;
+    	background: #F2F4F7;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+    	background: #0A2372;
+    }
+  }
+  //中身の記述
+  &__head {
+    width: 100%;
+    flex: none;
+    padding: $modalPadding;
+    border-bottom: 1px solid color(background);
+    &__title {
+      @extend %c-text__lv4;
+    }
+  }
+  &__middle {
+    padding: $modalPadding / 2 $modalPadding;
+    border-bottom: 1px solid color(background);
+    flex: none;
+    margin-bottom: -1px;
+  }
+  &__body {
+    width: 100%;
+    min-height: 240px;
+  }
+  &__contents {
+    text-align: left;
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: $modalPadding $modalPadding $modalPadding * 1.5;
+  }
+  &__foot {
+    width: 100%;
+    flex: none;
+    border-top: 1px solid color(background);
+    padding: $modalPadding;
+    .p-buttonWrap {
+      justify-content: center;
+      .c-button {
+        min-width: 160px;
+      }
+    }
+  }
+  &.remodal-is-opened {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    overflow: visible;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    text-decoration: none;
+    color: #95979c;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,.3);
+    &:hover,
+    &:focus {
+      color: #2b2e38;
+    }
+    &:before {
+      font-size: 20px;
+      width: 32px;
+      line-height: 32px;
+    }
+  }
+  //横幅サイズパターン
+  &--narrow {
+    max-width: 480px;
+  }
+  &--wide {
+    max-width: 960px;
+    width: 100%;
+  }
+}
+
+
+

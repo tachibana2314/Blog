@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 右からスライドして出てくる概要エリア
+
+-------------------------------------------------- */
+.p-overview {
+  &__control {
+    display: flex;
+    align-items: center;
+    height: 48px;
+//     padding: 0 32px;
+//     border-bottom: 1px solid color(line);
+    &__close{
+      cursor: pointer;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &__head {
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid color(line);
+    .p-buttonWrap--right{
+      margin-left: auto;
+    }
+    .p-hideMenu {
+      margin: 0 0 0 8px;
+    }
+  }
+  &__body {
+    padding: 32px;
+    height: calc((100vh - 48px));
+    overflow: auto;
+    position: relative;
+    z-index: 0;
+  }
+  &__item {
+    & + & {
+      margin-top: 24px;
+    }
+    &__head {
+      display: flex;
+      align-items: flex-end;
+      border-bottom: 1px solid color(line);
+      height: 32px;
+      padding: 0 4px 4px 12px;
+      margin: 0 0 8px;
+      background: color(background--light);
+      &__title {
+        @extend %c-text__lv5;
+      }
+      &__action {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}

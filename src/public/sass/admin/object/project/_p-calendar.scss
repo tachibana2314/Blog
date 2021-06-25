@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- カレンダー（従業員詳細）
+
+-------------------------------------------------- */
+.p-calendar {
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  &__item {
+    width: 320px;
+    border: 1px solid color(background);
+    background: #fff;
+    box-shadow:0px 28px 12px -5px rgba(0,0,0,.2),
+    0px 4px 20px 4px rgba(0,0,0,.04);
+    position: relative;
+    z-index: 1;
+    position: absolute;
+    top: 98%;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    &.is-active__calendar--show {
+      opacity: 1;
+      pointer-events: all;
+    }
+    &__head {
+      padding: 4px 8px;
+      border-bottom: 1px solid color(background);
+      display: flex;
+      align-items: center;
+      .c-labelStatus {
+        margin: 0 8px 0 0;
+      }
+      .dow {
+        margin: 0 0 0 8px;
+      }
+      .p-buttonWrap {
+        margin: 0 0 0 auto;
+      }
+    }
+    &__body {
+      padding: 16px;
+    }
+    &__foot {
+      border-top: 1px solid color(background);
+      padding: 8px;
+    }
+  }
+  .fc {
+    .fc-day-today {
+      position: relative;
+      background-color: transparent !important;
+      .fc-daygrid-day-number {
+        color: #fff;
+        background: color(accent);
+        border-radius: 100px;
+      }
+    }
+    .fc-header-toolbar {
+      display: none;
+    }
+    .fc-col-header-cell-cushion  {
+      @extend %c-text__note;
+    }
+    .fc-day-other {
+      opacity: .3;
+    }
+    .fc-daygrid-day-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .fc-daygrid-day-number {
+      font-size: 10px;
+      line-height: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 14px;
+      min-width: 14px;
+      padding: 0 1px;
+      margin: 0 0 0 -1px;
+      z-index: 10;
+    }
+    .fc-daygrid-day-events {
+      margin: 0 !important;
+      border: 1px solid color(background);
+      border-radius: 2px;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+      }
+      .fc-daygrid-event-harness {
+        position: absolute;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        top: -1px;
+        left: -1px;
+        .fc-daygrid-event {
+          width: 100%;
+          height: 100%;
+          border: 1px solid transparent;
+          border-radius: 2px;
+          margin: 0;
+          &.arrive {
+            background: color(correct) + 44;
+            border-color: color(correct);
+          }
+          &.absence,{
+            background: color(alert) + 44;
+            border-color: color(alert); 
+          }
+          &.publicHoliday,
+          &.specialHoliday {
+            background: color(form) + 44;
+            border-color: color(form); 
+          }
+          > * {
+            display: none;
+          }
+        }
+      }
+    }
+    .fc-daygrid-day-bottom {
+      display: none;
+    }
+  }
+  .fc-theme-standard {
+    .fc-scrollgrid,
+    td,
+    th {
+      border: none;
+    }
+  }
+  .fc-daygrid-day {
+    padding: 2px;
+/*
+    .fc-daygrid-day-frame {
+      border: 1px solid color(background);
+      border-radius: 2px;
+    }
+*/
+  }
+}
