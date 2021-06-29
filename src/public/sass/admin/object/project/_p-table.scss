@@ -1,0 +1,387 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- テーブル
+
+================================================== */
+.p-scroll {
+  width: 100%;  
+}
+/* ! --------------------------------------------------
+
+- テーブル
+
+-------------------------------------------------- */
+.p-table {
+  width: 100%;
+  &__head {
+    border-top: 1px solid map-get($colors,form);
+    border-bottom: 1px solid map-get($colors,form);
+  }
+  &__data {
+    border-bottom: 1px solid map-get($colors,form);
+    &__tableRow {
+      border-bottom: 1px solid map-get($colors,background);
+      transition: all 0.1s ease;
+      &[data-href],
+      &[data-remodal-target],
+      &.js-trigger__overview--open {
+        cursor: pointer;
+        &:hover {
+          background: map-get($colors,background);
+        }
+      }
+      &:last-of-type {
+        border-bottom: none;
+      }
+      &--checked {
+        background: color(accent) + 33;
+        &:hover {
+          background: color(accent) + 33 !important;
+        }
+      }
+    }
+  }
+  &__foot {
+    border-top: 1px solid map-get($colors,form);
+    border-bottom: 1px solid map-get($colors,form);
+  }
+  &__tableHead {
+    background: color(background--light);
+    $tableHeadWidth: (
+      'checkbox': 40, 
+      'status': 100, 
+      'statusNarrow': 70, 
+      'statusWide': 120, 
+      'creditCard': 140, 
+      'type': 60, 
+      'typeNarrow': 40, 
+      'typeWide': 80, 
+      'icon': 40,
+      'id': 80,
+      'idWide': 120,
+      'userNarrow': 120,
+      'user': 160,
+      'userWide': 200,
+      'date': 100,
+      'time': 80,
+      'shop': 160,
+      'dateTime': 160,
+      'dateTimeNarrow': 140,
+      'stamp': 100,
+      'stampNarrow': 80,
+      'stampWide': 120,
+      'price': 120,
+      'priceNarrow': 100,
+      'priceWide': 180,
+      'telephone': 90,
+      'count': 80,
+      'stock': 100,
+      'stockNarrow': 60,
+    ) !global;
+    @each $key,$val in $tableHeadWidth {
+      &--#{$key} {
+        width: #{$val}px;
+      }
+    }
+    //カラムの幅
+    &--status {
+      width: 100px;
+    }
+    .p-table__item {
+      font-size: 11px;
+      color: color(form);
+      display: inline-flex;
+      flex-wrap: wrap;
+      position: relative;
+      .c-text__note {
+        color: color(form);      
+      }
+      .full {
+        display: block;
+        width: 100%;
+      }
+      & > [data-table-sort],
+      &[data-table-sort] {
+        padding-right: 24px;
+        transition: all 0.1s ease;
+        cursor: pointer;
+        position: relative;
+        &:before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 32px;
+          background: url(../img/admin/p-table/ascending.svg);
+          background-size: 16px 16px !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          transition: all 0.2s ease;
+          z-index: 1;
+          opacity: .2;
+        }
+        &:hover {
+          color: color(form--high);
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+      & > [data-table-sort="asc"],
+      &[data-table-sort="asc"] {
+        &:before {
+          opacity: 1;
+        }
+        &:hover {
+          &:before {
+            background: url(../img/admin/p-table/descending.svg);
+          }
+        }
+      }
+      & > [data-table-sort="desc"],
+      &[data-table-sort="desc"] {
+        &:before {
+          opacity: 1;
+          background: url(../img/admin/p-table/descending.svg);
+        }
+        &:hover {
+          &:before {
+            background: url(../img/admin/p-table/ascending.svg);
+          }
+        }
+      }
+    }
+  }
+  &__tableData {
+    > .nodata{
+      padding: 12px 0;
+      text-align: center;
+      color: #aaa;
+    }
+  }
+  //削除などのコントロールを表示
+  &__control {
+    position: relative;
+    .p-table__data__tableRow:hover & .p-table__item {
+      opacity: 0;
+      pointer-events: none;
+    }
+    &__body {
+      padding: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.1s ease;
+      .p-table__data__tableRow:hover & {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+    &__list {
+      display: flex;
+      align-items: center; 
+      > li {
+        padding: 0 4px;
+      }
+    }
+  }
+  &__item {
+    font-size: 12px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    transition: all 0.1s ease;
+    &--column {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &--columnEnd {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    &--thin{
+      min-height: 32px;
+    }
+    &--price {
+      text-align: right;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+    //写真表示
+    &__photo {
+      .c-image {
+        width: 112px;
+      }
+      &--machine {
+        .c-image {
+          width: 80px;
+        }
+      }
+      &--head {
+        .c-image {
+          width: 64px;
+        }
+      }
+    }
+    //ユーザー表示
+    &__user {
+      display: flex;
+      align-items: center;
+      .c-image {
+        width: 32px;
+        margin: 0 8px 0 0;
+      }
+      &__text {
+        flex: none;
+        .id {
+          line-height: 1em;
+        }
+      }
+    }
+    //ロゴ表示
+    &__logo{
+      flex: auto;
+      min-width: 1px;
+      display: flex;
+      align-items: center;
+      &__img{
+        max-width: 100px;
+        width: 100%; height: auto;
+        margin: 0 10px 0 0;
+      }
+      &__text{
+        
+      }
+    }
+    //移動表示
+    &--fromTo {
+      display: flex;
+      flex-wrap: wrap;
+      .from { 
+        width: 120px;
+        text-align: right;
+      }
+      .to {
+        width: 140px;
+        padding-left: 20px;
+        position: relative;
+        &:before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 16px;
+          background: url(../img/admin/p-fromTo/arrow.svg);
+          background-size: contain !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%); 
+        } 
+      }
+    }
+    //
+    &__checkboxStatus {
+      .c-image {
+        width: 24px;
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+      }
+      &__checked {
+        background: url(../img/admin/p-table/checked.svg);
+      }
+      &__unchecked {
+        background: url(../img/admin/p-table/unchecked.svg);
+      }
+    }
+    //在庫ステータス
+    &__status {
+      .label {
+        color: map-get($colors,form--high);
+        @extend %c-text__lv7;
+        border-left: 3px solid map-get($colors,form--high);
+        padding: 0 0 0 5px;
+        //未対応・エラーなど
+        &--error {
+          color: map-get($colors,error);
+          border-color: map-get($colors,error);
+        }
+        &--current {
+          color: map-get($colors,current);
+          border-color: map-get($colors,current);
+        }
+        //完了
+        &--correct {
+          color: map-get($colors,correct);
+          border-color: map-get($colors,correct);
+        }
+      }
+    }
+  }
+  &--fixed {
+    table-layout: fixed;
+  }
+}
+.p-table--block {
+  .p-table {
+    &__head {
+      &__tableRow {
+        display: flex;
+        align-items: center;
+        background: color(background--light);
+      }
+    }
+    &__data {
+      display: block;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 240px;
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 2px;
+      	background: #F2F4F7;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background: #0A237244;
+      }
+      &:hover::-webkit-scrollbar-thumb {
+        background: #0A2372;
+      }
+      &__tableRow {
+        display: flex;
+        margin-right: -8px;
+      }
+      &--scroll400 {
+        height: 400px;  
+      }
+    }
+    //詳細度考慮のため順番変更している
+    &__tableData {
+      flex: auto;
+      min-width: 0;
+    }
+    &__tableHead {
+      flex: auto;
+      min-width: 0;
+      @each $key,$val in $tableHeadWidth {
+        &--#{$key} {
+          flex: 0 0 #{$val}px;
+        }
+      }
+    }
+  }
+}

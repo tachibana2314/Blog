@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+ユーザー[サムネ+テキスト]
+
+-------------------------------------------------- */
+.p-user {
+  display: flex;
+  align-items: center;
+  &__image {
+    width: 36px;
+    margin: 0 8px 0 0;
+    &--small {
+      width: 24px;
+      margin: 0 6px 0 0;
+    }
+    &--large {
+      width: 48px;
+    }
+  }
+  &__text {
+    flex: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc((100% - 36px));
+    .p-user__image--small + & {
+      width: calc((100% - 24px));  
+    }
+    .p-user__image--large + & {
+      width: calc((100% - 48px));  
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 共通サイズ
+
+-------------------------------------------------- */
+$scaleData: (
+  'sidebarDetail': 240px,
+  'sidebarDetail--note': 200px,
+)!default;
+@function scale($scaleName) {
+  @return #{map-get($scaleData, $scaleName)}
+}

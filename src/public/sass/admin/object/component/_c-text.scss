@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ボタン
+
+================================================== */
+/* ! --------------------------------------------------
+
+- ボタン
+
+-------------------------------------------------- */
+.c-text,
+%c-text {
+  &__lv1 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.45833em;
+    letter-spacing: .13em;
+  }
+  &__lv2 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv3 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.45833em;
+    letter-spacing: .13em;
+  }
+  &__lv4 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    $lv5: #{&};
+    color: color(title);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+    &--base {
+      @extend #{$lv5};
+      color: color(base);
+      font-weight: 400;
+    }
+  }
+  &__lv6 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;
+  }
+  &__lv7 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;
+  }
+  &__sub {
+    color: color(base);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__note {
+    color: floralwhite;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__color--accent {
+    color: color(accent);
+  }
+  &__weight--700 {
+    font-weight: 700;
+  }
+  &__letter--none {
+    letter-spacing: 0;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--ellipsis {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

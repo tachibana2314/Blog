@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="グループ_1645" data-name="グループ 1645" transform="translate(-1883 -7619)">
+    <rect id="長方形_1757" data-name="長方形 1757" width="16" height="16" transform="translate(1887 7623)" fill="#fff"/>
+    <g id="check_box-24px" transform="translate(1883 7619)">
+      <path id="パス_1014" data-name="パス 1014" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="パス_1015" data-name="パス 1015" d="M19,3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5A2,2,0,0,0,19,3ZM10,17,5,12l1.41-1.41L10,14.17l7.59-7.59L19,8Z" fill="#4AD1A2"/>
+    </g>
+  </g>
+</svg>

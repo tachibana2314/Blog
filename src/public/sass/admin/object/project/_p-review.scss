@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- レビュー
+
+-------------------------------------------------- */
+.p-review {
+  &__list {
+    &__item {
+      border-bottom: 1px solid map-get($colors,line);
+      padding: 24px 0;
+      &__head {
+        display: flex;
+        align-items: center;
+        margin: 0 0 8px;
+        .p-buttonArea {
+          margin: 0 0 0 auto;
+        }
+      }
+      &__body {
+        
+      }
+    }
+  }
+}

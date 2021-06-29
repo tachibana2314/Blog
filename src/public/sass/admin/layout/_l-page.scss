@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ページレイアウト
+
+================================================== */
+/* ! --------------------------------------------------
+
+- ページレイアウト
+
+-------------------------------------------------- */
+.l-page {
+  width: 100%;
+  display: flex;
+  flex: auto;
+  min-width: 0;
+  background: snow;
+  &--login {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &--dashboard {
+    padding: 24px 40px;
+    background: floralwhite;
+  }
+  &--detail {
+    background: floralwhite;
+  }
+  &--full {
+    max-width: none;
+  }
+  &--edit {
+
+  }
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- 右側からスライドして出てくる概要
+
+-------------------------------------------------- */
+.l-overview {
+  width: 480px;
+  height: 100%;
+  background: #fff;
+  border-left: 1px solid map-get($colors,line);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  box-shadow: -4px 0px 2px 0px rgba(0,0,0,.05);
+  transform: translate(110% , 0);
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  &.is-active__overview--show {
+    transform: translate(0 ,0);
+    opacity: 1;
+    pointer-events: all;
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="stock__machine" transform="translate(-236 -6145)">
+    <rect id="長方形_1424" data-name="長方形 1424" width="16" height="16" transform="translate(236 6145)" fill="#fff" opacity="0"/>
+    <g id="グループ_1110" data-name="グループ 1110" transform="translate(237.333 6146.333)">
+      <rect id="長方形_1596" data-name="長方形 1596" width="4.004" height="1" transform="translate(4.666 1.986)" fill="#fff"/>
+      <path id="パス_1075" data-name="パス 1075" d="M626.606,1408.587v-.667a1.335,1.335,0,0,0-1.333-1.333h-6.667a1.335,1.335,0,0,0-1.333,1.333v.667h-2v4.667h2v6.667h9.333v-6.667h2v-4.667Zm-9.333,2v1.333h-.667v-2h.667Zm6.667,6.666h-4v-1.333h4Zm0-2.665h-4v-1.333h4Zm1.333-6v2h-6.667v-2h0v-.667h6.668Zm2,3.333h-.667v-2h.667Z" transform="translate(-615.273 -1406.587)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
