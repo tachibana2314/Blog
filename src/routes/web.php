@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/content/{content}', [HomeController::class, 'content'])->name('content');
 Route::get('/single', [HomeController::class, 'show'])->name('show');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 

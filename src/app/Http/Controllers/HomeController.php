@@ -9,7 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('web.home.index');
+        $contents = Content::all();
+        return view('web.home.index',[
+            'contents' => $contents
+        ]);
     }
 
 
@@ -30,4 +33,12 @@ class HomeController extends Controller
             'content' => $content
         ]);
     }
+
+    public function content(Content $content)
+    {
+        return view('web.content.show',[
+            'content' => $content
+        ]);
+    }
+
 }

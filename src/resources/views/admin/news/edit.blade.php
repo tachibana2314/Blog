@@ -18,7 +18,7 @@
               <a href="{{route('admin.content.index')}}" class="c-button c-button--line">戻る</a>
               <a
                 class="c-button c-button--main"
-                onclick="$('#news_form').submit();"
+                onclick="$('#form').submit();"
               >保存する
               </a>
               <div class="p-hideMenu">

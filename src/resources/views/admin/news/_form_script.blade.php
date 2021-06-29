@@ -124,7 +124,7 @@
 
   //プロジェクトを投稿する際にエディター内のものを#project_contents_innerに入れる。
   $(function () {
-    $("#news_form").on("submit", function () {
+    $("#form").on("submit", function () {
       $("#bodyInput").val($(".ql-editor").html());
     })
   })

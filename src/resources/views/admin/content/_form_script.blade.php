@@ -11,6 +11,7 @@
     // img要素に表示
     var $img = document.getElementById('main-image');
     $img.style.backgroundImage = 'url(' + blobUrl + ')';
+    console.log(blobUrl)
   });
   </script>
 
@@ -122,7 +123,7 @@
 
   //プロジェクトを投稿する際にエディター内のものを#project_contents_innerに入れる。
   $(function () {
-    $("#news_form").on("submit", function () {
+    $("#form").on("submit", function () {
       $("#bodyInput").val($(".ql-editor").html());
     })
   })

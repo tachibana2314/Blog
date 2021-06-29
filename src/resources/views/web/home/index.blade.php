@@ -11,7 +11,9 @@
     <div class="row mx-0">
       {{-- レフトコンテンツ  --}}
       <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-        @include('web.layouts.left-sidebar')
+        @include('web.layouts.left-sidebar',[
+          'contsnts' => $contents
+        ])
       </div>
       {{-- ライトコンテンツ  --}}
       <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">

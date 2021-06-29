@@ -49,7 +49,7 @@ class ContentRepository implements ContentRepositoryInterface
             $path = $disk->put('content', $file, 'public');
             $data['image_path'] = $path;
         }
-        dd($data);
+
 
         $content = new Content;
         $content->fill($data)->save();
@@ -62,7 +62,7 @@ class ContentRepository implements ContentRepositoryInterface
     {
         $data = $request->all();
         //画像保存
-        if($request->hasFile('image_path')){
+        if($request->has('image_path')){
             $disk = Storage::disk('s3');
             $file = $request->file('image_path');
            // s3に保存。

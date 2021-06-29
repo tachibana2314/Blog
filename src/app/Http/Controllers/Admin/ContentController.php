@@ -66,16 +66,16 @@ class ContentController extends Controller
                 ->with('message', '登録に失敗しました。');
         }
         return redirect()
-            ->back()
-            ->with('status', 'success')
-            ->with('message', 'コンテンツを登録しました。');
+                ->route('admin.content.edit', $content)
+                ->with('status', 'success')
+                ->with('message', 'コンテンツを登録しました。');
     }
 
 
     public function edit(Content $content)
     {
 
-        return view('admin.news.edit ', [
+        return view('admin.content.edit ', [
             'content' => $content,
         ]);
     }

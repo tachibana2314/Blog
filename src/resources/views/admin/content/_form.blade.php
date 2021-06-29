@@ -32,11 +32,26 @@
       <ul class="p-list">
         <li>
           <div class="p-list__label">
-            カテゴリー
+            記事カテゴリー
           </div>
           <div class="p-list__data">
             <div class="c-input--radio c-input--required c-input--select {{ $errors->has('text_category_id') ? 'c-input--error' : ''}}">
-              {{ Form::select('category_id', \App\Models\Content::CATEGORY_LIST, old('text_category_id', null), ['placeholder' => '選択してください'])}}
+              {{ Form::select('category_id', config('const.CONTENT_CATEGORY'), old('text_category_id', null), ['placeholder' => '選択してください'])}}
+            </div>
+          </div>
+          @error('text_category_id')
+            <div class="p-formError">
+              <p class="message">{{ $message }}</p>
+            </div>
+          @enderror
+        </li>
+        <li>
+          <div class="p-list__label">
+            タグ
+          </div>
+          <div class="p-list__data">
+            <div class="c-input--radio c-input--required c-input--select {{ $errors->has('text_category_id') ? 'c-input--error' : ''}}">
+              {{ Form::select('tag_id', config('const.PROGRAMMING_CATEGORY'), old('text_category_id', null), ['placeholder' => '選択してください'])}}
             </div>
           </div>
           @error('text_category_id')
@@ -51,9 +66,9 @@
           </div>
           <div class="p-list__data">
             <div class="c-input--checkbox c-input--checkbox--column">
-              {{ Form::hidden('headlin_flg', \App\Models\News::STATUS_2) }}
-              {{ Form::checkbox('headlin_flg', \App\Models\News::STATUS_1, $content->headlin_flg == \App\Models\News::STATUS_1 ? true : false, ['id' => "headlin_flg"]) }}
-              {{ Form::label("headlin_flg", '見出し記事') }}
+              {{ Form::hidden('headline_flg', \App\Models\Content::STATUS_2) }}
+              {{ Form::checkbox('headline_flg', \App\Models\Content::STATUS_1, $content->headline_flg == \App\Models\Content::STATUS_1 ? true : false, ['id' => "headline_flg"]) }}
+              {{ Form::label("headline_flg", '見出し記事') }}
             </div>
           </div>
         </li>

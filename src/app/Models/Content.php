@@ -71,10 +71,10 @@ class Content extends Model
      */
     public function getThumbnailAttribute()
     {
-        if (!$this->photo) {
+        if (!$this->image_path) {
             return null;
         } else {
-            return $this->getTemporaryImageUrl($this->photo);
+            return $this->getTemporaryImageUrl($this->image_path);
         }
     }
 
