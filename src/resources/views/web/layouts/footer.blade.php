@@ -28,28 +28,26 @@
           <div class="col-12 col-md-3 col-lg-2">
               <div class="footer_main_title py-3"> カテゴリー</div>
               <ul class="footer_menu">
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; PHP</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Laravel</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; AWS</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; React.js</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; JavaScript/jQuery</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Node.js</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Linux</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; git</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; ウェブサービス</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; アプリ</a></li>
-                <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; サーバー</a></li>
+                <li><a href="{{ route('content',['tag_id' => 1])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; PHP</a></li>
+                <li><a href="{{ route('content',['tag_id' => 2])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Laravel</a></li>
+                <li><a href="{{ route('content',['tag_id' => 3])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Docker</a></li>
+                <li><a href="{{ route('content',['tag_id' => 4])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; AWS</a></li>
+                <li><a href="{{ route('content',['tag_id' => 5])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; React.js</a></li>
+                <li><a href="{{ route('content',['tag_id' => 6])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; JavaScript/jQuery</a></li>
+                <li><a href="{{ route('content',['tag_id' => 7])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Node.js</a></li>
+                <li><a href="{{ route('content',['tag_id' => 8])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Linux</a></li>
+                <li><a href="{{ route('content',['tag_id' => 9])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; git</a></li>
+                <li><a href="{{ route('content',['tag_id' => 10])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; ウェブサービス</a></li>
+                <li><a href="{{ route('content',['tag_id' => 11])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; アプリ</a></li>
+                <li><a href="{{ route('content',['tag_id' => 12])}}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; サーバー</a></li>
               </ul>
           </div>
           <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
               <div class="footer_main_title py-3">人気記事</div>
-              <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-              <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-              <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-              <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-              <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-              <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-              <div class="footer_position_absolute"><img src="images/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div>
+              @foreach ($contents as $content)
+              <div class="footer_makes_sub_font">{{ $content['release_date'] }}</div>
+              <a href="{{ route('content.show', $content)}}" class="footer_post pb-4"> {{ $content['title'] }} </a>
+              @endforeach
           </div>
           <div class="col-12 col-md-12 col-lg-4 ">
               <div class="footer_main_title py-3">最終更新日</div>

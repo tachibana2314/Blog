@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
 /*
@@ -20,8 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/content/{content}', [HomeController::class, 'content'])->name('content');
-Route::get('/single', [HomeController::class, 'show'])->name('show');
+Route::get('/content', [ContentController::class, 'index'])->name('content');
+Route::get('/content/{content}', [ContentController::class, 'show'])->name('content.show');
+Route::get('/carrier', [HomeController::class, 'carrier'])->name('carrier');
+Route::get('/event', [HomeController::class, 'event'])->name('event');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 

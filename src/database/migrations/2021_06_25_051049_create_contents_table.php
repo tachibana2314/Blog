@@ -22,7 +22,7 @@ class CreateContentsTable extends Migration
             $table->unsignedInteger('tag_id')->nullable()->comment('記事タグID');
             $table->unsignedInteger('seq')->nullable()->comment('表示順');
             $table->date('release_date')->nullable()->comment('公開日');
-            $table->smallInteger('headline_flg')->nullable()->comment('見出し記事（1.あり、2.なし）');
+            $table->smallInteger('recommendation_flg')->nullable()->comment('おすすめ記事（1.あり、2.なし）');
             $table->smallInteger('release_status')->nullable()->comment('公開ステータス（1.公開、2.非公開）');
             $table->timestamps();
         });

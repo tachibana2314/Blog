@@ -62,25 +62,25 @@
         </li>
         <li>
           <div class="p-list__label">
-            見出し記事
+            おすすめ記事
           </div>
           <div class="p-list__data">
             <div class="c-input--checkbox c-input--checkbox--column">
-              {{ Form::hidden('headline_flg', \App\Models\Content::STATUS_2) }}
-              {{ Form::checkbox('headline_flg', \App\Models\Content::STATUS_1, $content->headline_flg == \App\Models\Content::STATUS_1 ? true : false, ['id' => "headline_flg"]) }}
-              {{ Form::label("headline_flg", '見出し記事') }}
+              {{ Form::hidden('recommendation_flg', \App\Models\Content::STATUS_2) }}
+              {{ Form::checkbox('recommendation_flg', \App\Models\Content::STATUS_1, $content->recommendation_flg == \App\Models\Content::STATUS_1 ? true : false, ['id' => "recommendation_flg"]) }}
+              {{ Form::label("recommendation_flg", '有効') }}
             </div>
           </div>
         </li>
         <li>
           <div class="p-list__label">
-            公開箇所
+            公開ステータス
           </div>
           <div class="p-list__data">
             <div class="c-input--checkbox c-input--checkbox--column">
-              {{ Form::hidden('web_release', \App\Models\News::STATUS_2) }}
-              {{ Form::checkbox('web_release', \App\Models\News::STATUS_1, $content->web_release == \App\Models\News::STATUS_1 ? true : false, ['id' => "showPlace--01"]) }}
-              {{ Form::label("showPlace--01", 'Webサイト') }}
+              {{ Form::hidden('release_status', \App\Models\Content::STATUS_2) }}
+              {{ Form::checkbox('release_status', \App\Models\Content::STATUS_1, $content->release_status == \App\Models\Content::STATUS_1 ? true : false, ['id' => "release_status"]) }}
+              {{ Form::label("release_status", '公開') }}
             </div>
           </div>
         </li>
@@ -107,7 +107,7 @@
             <div class="p-list__data">
               <div class="c-input--file">
                 <div class="c-button c-button--remove js-trigger__photoList--remove delete_image"></div>
-                <label for="postImage__main" id="main-image" class="c-image c-image--wide">
+                <label for="postImage__main" id="main-image" class="c-image imageUpload c-image--wide" style="background: url({{ $content->image }})">
                   {{ Form::file('image_path', ['id' => 'postImage__main','accept' => 'image/*', 'enctype' => 'multipart/form-data', 'class' => 'file_img_preview']) }}
                   {!! Form::hidden('image_path', isset($content->image_path) ? $content->image_path : '' ) !!}
                 </label>

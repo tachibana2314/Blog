@@ -128,3 +128,38 @@
     })
   })
 </script>
+
+@php($pathname = 'content')
+<script>
+  $(document).on('change', '.imageUpload input[type="file"]', function() {
+    if (this.files.length == 0) {
+      $(this).parent().css('background', 'url("'+$(this).parent().data('current')+'")');
+      $(this).parent().find('[type=file]').val("");
+      $(this).parent().find('[type=hidden]').val("");
+    } else {
+      /* Ajax経由で画像登録 */
+      var fd = new FormData();
+      fd.append('up_file', this.files[0]); // 画像
+      fd.append('_token', $('meta[name="csrf-token"]').attr('content')); // 画像
+      $.ajax({
+        url: "{{ route('admin.uploadImage', $pathname) }}", // 画像登録処理を行うPHPファイル(api)
+        type: 'POST',
+        data: fd,
+        cache: false,
+        contentType: false,
+        processData: false,
+        context: $(this).parent(),
+      }).done(function (data) {
+        const url = data.path;
+        var path = (new URL(url)).pathname.slice(1);
+        $(this).css('background', 'url("' + url + '")');
+        $(this).find('[type=hidden]').val(path);
+      }).fail(function (jqXHR, textStatus, errorThrown) {
+        $(this).css('background', 'url("{{ asset('img/common/noImage/admin--square.svg') }}")');
+        $(this).find('[type=file]').val("");
+        $(this).find('[type=hidden]').val("");
+        alert("エラーが発生しました。");
+      });
+    }
+  });
+</script>
