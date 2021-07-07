@@ -49,21 +49,12 @@
                           </th>
                           <th class="p-table__tableHead" width="48">
                             <div class="p-table__item">
-                              <p class="c-text__note">公開：</p>
+                              <p class="c-text__note">おすすめ記事：</p>
                             </div>
                           </th>
                           <th class="p-table__tableHead" width="80">
-                            <div class="p-table__item">見出し記事</div>
+                            <div class="p-table__item">公開：</div>
                           </th>
-                          <th class="p-table__tableHead" width="80">
-                            <div class="p-table__item">Webサイト</div>
-                          </th>
-                          <!--<th class="p-table__tableHead" width="80">
-                            <div class="p-table__item">マイページ</div>
-                          </th>
-                          <th class="p-table__tableHead" width="80">
-                            <div class="p-table__item">アプリ</div>
-                          </th>-->
                           <th class="p-table__tableHead">
                             <div class="p-table__item">作成日</div>
                           </th>

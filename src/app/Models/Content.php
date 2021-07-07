@@ -6,6 +6,7 @@ use App\Traits\GetImageTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
 
 class Content extends Model
 {
@@ -60,16 +61,15 @@ class Content extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Custum Methods
+    | Accessor Methods
     |--------------------------------------------------------------------------
     */
-
     /**
      * 取得 サムネイル
      *
      * @return String
      */
-    public function getThumbnailAttribute()
+    public function getImageAttribute()
     {
         if (!$this->image_path) {
             return null;
@@ -78,23 +78,16 @@ class Content extends Model
         }
     }
 
-    public function getCategoryLabelAttribute()
+    public function getCategoryAttribute()
     {
-        $result = Arr::get($this::CATEGORY_LIST, $this->text_category_id, null);
+        $result = Arr::get( config('const.CONTENT_CATEGORY'), $this->category_id, null);
 
         return $result;
     }
 
-    public function getWebReleaseLabelAttribute()
+    public function getProgramingCategoryAttribute()
     {
-        $result = Arr::get($this::STATUS_LIST, $this->web_release, null);
-
-        return $result;
-    }
-
-    public function getMypageReleaseLabelAttribute()
-    {
-        $result = Arr::get($this::STATUS_LIST, $this->mypage_release, null);
+        $result = Arr::get( config('const.PROGRAMMING_CATEGORY'), $this->tag_id, null);
 
         return $result;
     }
@@ -116,18 +109,53 @@ class Content extends Model
         return $this->headlin_flg === self::STATUS_1;
     }
 
-    public function getIsWebReleasedAttribute()
+    public function getIsReleasedAttribute()
     {
-        return $this->web_release === self::STATUS_1;
+        return $this->release_status === self::STATUS_1;
     }
 
-    public function getIsMypageReleasedAttribute()
+
+    /*
+    |--------------------------------------------------------------------------
+    | Scope
+    |--------------------------------------------------------------------------
+    */
+    public function scopePublished($query)
     {
-        return $this->mypage_release === self::STATUS_1;
+        return $query->where('release_status', 1)
+                    ->where('release_date', '<=', new Carbon());
     }
 
-    public function getIsAppReleasedAttribute()
+    public function scopeRecently($query)
     {
-        return $this->app_release === self::STATUS_1;
+        return $query->orderBy('contents.release_date', 'desc');
     }
+
+
+    public function scopeIndex($query)
+    {
+        return $query->take(3)->get();
+    }
+
+    public function scopePrev($query, $contentId)
+    {
+        return $query->where('id', '<', $contentId)->orderBy('id', 'desc');
+    }
+
+    public function scopeNext($query, $contentId)
+    {
+        return $query->where('id', '>', $contentId)->orderBy('id');
+    }
+
+    public function scopeRecommendation($query)
+    {
+        return $query->where('recommendation_flg', 1);
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custum Methods
+    |--------------------------------------------------------------------------
+    */
 }

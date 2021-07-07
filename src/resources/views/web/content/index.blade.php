@@ -23,7 +23,7 @@
       </div>
     </div>
     {{-- ページネーション  --}}
-    {{ $contents->links('vendor.pagination.default') }}
+    @include('web.layouts.pagination')
   </div>
 </div>
 <div class="container-fluid pb-4 pt-5">

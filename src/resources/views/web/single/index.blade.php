@@ -1,15 +1,12 @@
 
 @include('web.layouts.head')
 <body>
-<!-- ! トップビュー
--------------------------------------------------- -->
-
 <!-- ! メイン--- -->
 <main>
 <!-- ! ヘッダー -->
 @include('web.layouts.header')
-
-<div id="fh5co-title-box" style="background-image: url(images/camila-cordeiro-114636.jpg); background-position: 50% 90.5px;" data-stellar-background-ratio="0.5">
+{{-- overlay --}}
+<div id="fh5co-title-box" style="background-image: url({{$content['image']}}; background-position: 50% 90.5px;" data-stellar-background-ratio="0.5">
   <div class=""></div>
   <div class="page-title">
     <img src="" alt="Free HTML5 by FreeHTMl5.co">
@@ -42,4 +39,3 @@
 
 </main>
 @include('web.layouts.footer')
-

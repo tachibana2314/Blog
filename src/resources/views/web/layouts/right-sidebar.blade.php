@@ -4,17 +4,18 @@
 </div>
 <div class="clearfix"></div>
 <div class="fh5co_tags_all">
-  <a href="#" class="fh5co_tagg">PHP</a>
-  <a href="#" class="fh5co_tagg">Laravel</a>
-  <a href="#" class="fh5co_tagg">AWS</a>
-  <a href="#" class="fh5co_tagg">React.js</a>
-  <a href="#" class="fh5co_tagg">JavaScript/jQuery</a>
-  <a href="#" class="fh5co_tagg">Node.js</a>
-  <a href="#" class="fh5co_tagg">Linux</a>
-  <a href="#" class="fh5co_tagg">git</a>
-  <a href="#" class="fh5co_tagg">ウェブサービス</a>
-  <a href="#" class="fh5co_tagg">アプリ</a>
-  <a href="#" class="fh5co_tagg">サーバー</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 1])}}">PHP</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 2])}}">Laravel</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 3])}}">Docker</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 4])}}">AWS</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 5])}}">React.js</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 6])}}">JavaScript/jQuery</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 7])}}">Node.js</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 8])}}">Linux</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 9])}}">git</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 10])}}">ウェブサービス</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 11])}}">アプリ</a>
+  <a class="fh5co_tagg" href="{{ route('content',['tag_id' => 12])}}">サーバー</a>
 </div>
 
 
@@ -22,39 +23,14 @@
 <div>
   <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">人気記事一覧</div>
 </div>
+@foreach ($contents as $content)
 <div class="row pb-3">
   <div class="col-5 align-self-center">
-    <img src="images/download (1).jpg" alt="img" class="fh5co_most_trading"/>
+    <img src="{{ $content['image'] }}" width="80" height="60">
   </div>
   <div class="col-7 paddding">
-    <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-    <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+    <div class="most_fh5co_treding_font">{{ $content['title'] }}</div>
+    <div class="most_fh5co_treding_font_123">{{ $content['overview'] }}</div>
   </div>
 </div>
-<div class="row pb-3">
-  <div class="col-5 align-self-center">
-    <img src="images/allef-vinicius-108153.jpg" alt="img" class="fh5co_most_trading"/>
-  </div>
-  <div class="col-7 paddding">
-    <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
-    <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-  </div>
-</div>
-<div class="row pb-3">
-  <div class="col-5 align-self-center">
-    <img src="images/download (2).jpg" alt="img" class="fh5co_most_trading"/>
-  </div>
-  <div class="col-7 paddding">
-    <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-    <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-  </div>
-</div>
-<div class="row pb-3">
-  <div class="col-5 align-self-center"><img src="images/seth-doyle-133175.jpg" alt="img"
-                                            class="fh5co_most_trading"/></div>
-  <div class="col-7 paddding">
-    <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-    <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-  </div>
-</div>
-
+@endforeach

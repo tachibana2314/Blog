@@ -63,46 +63,47 @@
         <a class="navbar-brand" href="#"><img src="images/logo.png" alt="img" class="mobile_logo_width"/></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item　@if(Route::is('home')) active @endif">
               <a class="nav-link" href="{{ route('home')}}">ホーム <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="{{ route('show')}}">プロフィール <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{ route('show')}}" id="dropdownMenuButton2" data-toggle="dropdown"
+            <li class="nav-item dropdown @if(Route::is('content')) active @endif">
+              <a class="nav-link dropdown-toggle" href="{{ route('content')}}" id="dropdownMenuButton2" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">プログラミング<span class="sr-only">(current)</span></a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                <a class="dropdown-item" href="#">PHP</a>
-                <a class="dropdown-item" href="#">Laravel</a>
-                <a class="dropdown-item" href="#">AWS</a>
-                <a class="dropdown-item" href="#">React.js</a>
-                <a class="dropdown-item" href="#">JavaScript/jQuery</a>
-                <a class="dropdown-item" href="#">Node.js</a>
-                <a class="dropdown-item" href="#">Linux</a>
-                <a class="dropdown-item" href="#">git</a>
-                <a class="dropdown-item" href="#">ウェブサービス</a>
-                <a class="dropdown-item" href="#">アプリ</a>
-                <a class="dropdown-item" href="#">サーバー</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 1])}}">PHP</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 2])}}">Laravel</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 3])}}">Docker</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 4])}}">AWS</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 5])}}">React.js</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 6])}}">JavaScript/jQuery</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 7])}}">Node.js</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 8])}}">Linux</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 9])}}">git</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 10])}}">ウェブサービス</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 11])}}">アプリ</a>
+                <a class="dropdown-item" href="{{ route('content',['tag_id' => 12])}}">サーバー</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{ route('show')}}" id="dropdownMenuButton2" data-toggle="dropdown"
+            <li class="nav-item dropdown @if(Route::is('carrier')) active @endif">
+              <a class="nav-link dropdown-toggle" href="{{ route('carrier')}}" id="dropdownMenuButton2" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">キャリア<span class="sr-only">(current)</span></a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
                   <a class="dropdown-item" href="#">転職活動</a>
                   <a class="dropdown-item" href="#">面接対策</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{ route('home')}}" id="dropdownMenuButton2" data-toggle="dropdown"
+            <li class="nav-item dropdown @if(Route::is('event')) active @endif">
+              <a class="nav-link dropdown-toggle" href="{{ route('event')}}" id="dropdownMenuButton2" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">イベントレポート<span class="sr-only">(current)</span></a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
                   <a class="dropdown-item" href="#">勉強会</a>
                   <a class="dropdown-item" href="#">コミュニティイベント</a>
               </div>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item @if(Route::is('profile')) active @endif">
+              <a class="nav-link" href="{{ route('profile')}}">プロフィール <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @if(Route::is('contact')) active @endif">
               <a class="nav-link" href="{{ route('contact') }}">お問い合わせ <span class="sr-only">(current)</span></a>
             </li>
           </ul>
