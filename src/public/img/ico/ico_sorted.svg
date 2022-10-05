@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12">
+  <g id="ico_sorted" transform="translate(-332 -196)">
+    <path id="多角形_1" data-name="多角形 1" d="M4.128.413a.5.5,0,0,1,.743,0L8.249,4.166A.5.5,0,0,1,7.877,5H1.123a.5.5,0,0,1-.372-.834Z" transform="translate(332 196)" fill="#b6b8b9"/>
+    <path id="多角形_2" data-name="多角形 2" d="M4.128.413a.5.5,0,0,1,.743,0L8.249,4.166A.5.5,0,0,1,7.877,5H1.123a.5.5,0,0,1-.372-.834Z" transform="translate(341 208) rotate(180)" fill="#00A199"/>
+  </g>
+</svg>

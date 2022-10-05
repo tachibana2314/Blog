@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ アイコン
+　■ フォームs
+
+
+---------------------------------------------------------------------------------------------------- */
+/* ! ====================================================================================================
+　■ アイコン
+==================================================================================================== */
+/* ! ==================================================
+　サイドバーメニュー
+================================================== */
+
+/* ! アイコン指定 —————————————————————————————— */
+.list_nav_aside .home a:before {  background: url(../img/ico/ico_ttl_home_gray.svg);}
+.list_nav_aside .products a:before {  background: url(../img/ico/ico_ttl_product_gray.svg);}
+.list_nav_aside .store a:before {  background: url(../img/ico/ico_ttl_shop_gray.svg);}
+.list_nav_aside .users a:before {  background: url(../img/ico/ico_ttl_user_gray.svg);}
+.list_nav_aside .members a:before {  background: url(../img/ico/ico_ttl_member_gray.svg);}
+.list_nav_aside .coupon a:before {  background: url(../img/ico/ico_ttl_coupon_gray.svg);}
+.list_nav_aside .slide a:before {  background: url(../img/ico/ico_ttl_slide_gray.svg);}
+.list_nav_aside .informations a:before {  background: url(../img/ico/ico_ttl_information_gray.svg);}
+.list_nav_aside .masters a:before {  background: url(../img/ico/ico_ttl_master_gray.svg);}
+.list_nav_aside .stamp a:before {  background: url(../img/ico/ico_ttl_stamp_gray.svg);}
+
+/* ! アイコン_カレント —————————————————————————————— */
+.list_nav_aside .current.home a:before {  background: url(../img/ico/ico_ttl_home.svg);}
+.list_nav_aside .current.products a:before {  background: url(../img/ico/ico_ttl_product.svg);}
+.list_nav_aside .current.store a:before {  background: url(../img/ico/ico_ttl_shop.svg);}
+.list_nav_aside .current.users a:before {  background: url(../img/ico/ico_ttl_user.svg);}
+.list_nav_aside .current.members a:before {  background: url(../img/ico/ico_ttl_member.svg);}
+.list_nav_aside .current.coupon a:before {  background: url(../img/ico/ico_ttl_coupon.svg);}
+.list_nav_aside .current.slide a:before {  background: url(../img/ico/ico_ttl_slide.svg);}
+.list_nav_aside .current.informations a:before {  background: url(../img/ico/ico_ttl_information.svg);}
+.list_nav_aside .current.masters a:before {  background: url(../img/ico/ico_ttl_master.svg);}
+.list_nav_aside .current.stamp a:before {  background: url(../img/ico/ico_ttl_stamp.svg);}
+
+/* ! カレント_カラー —————————————————————————————— */
+.list_nav_aside .current a:after {
+  background: #47172D;
+}
+
+
+/* ! ==================================================
+　ページタイトル
+================================================== */
+/* ! アイコン個別指定 —————————————————————————————— */
+.page_home .head_page .ttl:before {  background: url(../img/ico/ico_ttl_home.svg);}
+.page_products .head_page .ttl:before {  background: url(../img/ico/ico_ttl_product.svg);}
+.page_store .head_page .ttl:before {  background: url(../img/ico/ico_ttl_shop.svg);}
+.page_users .head_page .ttl:before {  background: url(../img/ico/ico_ttl_user.svg);}
+.page_members .head_page .ttl:before {  background: url(../img/ico/ico_ttl_member.svg);}
+.page_coupon .head_page .ttl:before {  background: url(../img/ico/ico_ttl_coupon.svg);}
+.page_slide .head_page .ttl:before {  background: url(../img/ico/ico_ttl_slide.svg);}
+.page_informations .head_page .ttl:before {  background: url(../img/ico/ico_ttl_information.svg);}
+.page_masters .head_page .ttl:before {  background: url(../img/ico/ico_ttl_master.svg);}
+
+
+/* ! ==================================================
+　タブのカレント
+================================================== */
+.current_tab .button_tab {
+  color: #47172D;
+}
+.current_tab .button_tab:before {
+  background: #47172D;
+}
+
+
+/* ! ====================================================================================================
+　■ フォーム
+==================================================================================================== */
+/* ! チェックボックス個別指定 ============================== */
+.wrap_checkbox label:after {
+  border-color: #47172D;
+  background: #47172D url(../img/ico/ico_form/ico_form_check_white.svg) no-repeat center center;
+  background-size: 16px 16px !important;
+  display: none;
+}
+.wrap_radio label:after {
+  border-color: #47172D;
+  background: #47172D;
+}
+
+
+
+
+
+

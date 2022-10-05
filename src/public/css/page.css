@@ -1,0 +1,411 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ 共通要素
+
+　■ 売却申込管理
+　■ お知らせ
+　■ マスタ管理
+　■ エラーページ---------------------------------------------------------------------------------------------------- */
+/* ! ====================================================================================================
+　■ 共通要素
+==================================================================================================== */
+
+
+
+
+/* ! ====================================================================================================
+　■ 商品管理
+==================================================================================================== */
+/* ! ==================================================
+　アレルギータグ
+================================================== */
+[class*="list_tag_"]{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -2px;
+}
+[class*="list_tag_"] > li{
+  padding: 2px;
+}
+[class*="list_tag_"] p{
+  color: #CC3737;
+  border: 1px solid #CC3737;
+  padding: 0 10px;
+  font: 400 14px/1.5em 'helvetica','noto sans japanese',sans-serif;
+
+}
+
+
+/* ! ====================================================================================================
+　■ 売却申込管理
+==================================================================================================== */
+.area_sales_detail .area_assessment_input {
+  margin: 40px 0 0;
+}
+/* ! ==================================================
+　プロダクトリスト
+================================================== */
+.list_product > li + li {
+  border-top: 1px dotted #B7BAC9;
+  margin: 10px 0 0;
+  padding: 10px 0 0;
+}
+.list_product article {
+  align-items: center;
+}
+.list_product .img {
+  flex: 0 0 80px;
+  margin: 0 20px 0 0;
+}
+.list_product .layout {
+  align-items: center;
+}
+.list_product .layout .layout_head {
+  text-align: right;
+}
+
+/* ! ==================================================
+　査定結果の入力
+================================================== */
+.area_assessment_input {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 10px 0;
+}
+
+/* ! ==================================================
+　合計金額
+================================================== */
+.area_total {
+  margin: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.area_total.right {
+  align-items: flex-end;
+}
+.area_total .total {
+  font: 700 40px/1em 'helvetica','noto sans japanese',sans-serif;
+}
+.area_total .total:before,
+.area_total .total:after {
+  font: 500 16px/1em 'noto sans japanese',sans-serif;
+}
+.area_total .total:before {
+  content: attr(data-before)"";
+  margin: 0 8px 0 0;
+}
+.area_total .total:after {
+  content: attr(data-after)"";
+  margin: 0 0 0 8px;
+}
+.area_total .description {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* ! ====================================================================================================
+　■ お知らせ
+==================================================================================================== */
+/* ! ==================================================
+　前後のお知らせ
+================================================== */
+.area_nav_news {
+  border-top: 1px solid #CDD7E5;
+  margin: 60px 0 0;
+  padding: 30px 0 0;
+}
+/* ! リスト ============================== */
+.list_nav_news {
+  display: flex;
+  margin: 0 -20px;
+}
+.list_nav_news > li {
+  width: 50%;
+  padding: 0 20px;
+}
+
+
+/* ! ====================================================================================================
+　■ マスタ管理
+==================================================================================================== */
+.area_masters {
+}
+
+/* ! ==================================================
+　マスタリスト
+================================================== */
+.list_masters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.list_masters > li {
+  width: 33.3333%;
+  padding: 10px;
+}
+.list_masters .ttl {
+  position: relative;
+}
+
+/* カウント */
+.list_masters .count {
+  color: #00A199;
+  font: 900 24px/1em 'helvetica','noto sans japanese',sans-serif;
+  letter-spacing: 0;
+  margin: 15px 0 0;
+  position: relative;
+}
+.list_masters .count:after {
+  content: attr(data-after)"";
+  color: #000;
+  font: 400 15px/1em 'helvetica','noto sans japanese',sans-serif;
+  margin: 0 0 0 4px;
+}
+
+/* ! ==================================================
+　マスタ編集
+================================================== */
+.area_edit_masters {
+}
+.area_edit_masters .tagify__tag{
+  margin: 2px;
+  width: 100%;
+}
+.area_edit_masters .tagify {
+  --tag-bg: #fff;
+  background: #F2F4F7;
+  border-color: #F2F4F7;
+  padding: 8px;
+}
+.area_edit_masters .tagify__tag__removeBtn {
+  margin: 0 8px 0 auto;
+}
+.area_edit_masters .tagify__tag__removeBtn::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/ico/ico_form/ico_form_times.svg) no-repeat center center;
+  background-size: contain !important;
+}
+
+
+
+
+
+
+/* ! ====================================================================================================
+　■ エラーページ
+==================================================================================================== */
+.page_error body {
+  background: url(../img/bg/bg_error.jpg) no-repeat center center;
+  background-size: cover !important;
+}
+.page_error .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page_error .head_min {
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page_error .head_min img {
+  height: 32px;
+}
+.page_error footer {
+  color: #fff;
+  width: 100%;
+  min-width: 1200px;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.page_error footer p {
+  font: 500 12px/1em 'helvetica','noto sans japanese',sans-serif;
+  text-align: right;
+}
+
+/* エラーエリア */
+.area_error {
+  color: #fff;
+  flex: auto;
+  min-width: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.area_error .container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* テキスト */
+.area_error .ttl {
+  font: 700 120px/1em 'helvetica','noto sans japanese',sans-serif;
+  margin: 0 0 30px;
+  position: relative;
+  z-index: 1;
+}
+.area_error .ttl:before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: url(../img/ico/ico_error.svg) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  z-index: -1;
+  transform : rotate(60deg) translate(-50% , -50%);
+  transform-origin : 0 0 ;
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform : rotate(55deg) translate(-50% , -50%);
+  }
+  90% {
+    transform : rotate(70deg) translate(-50% , -50%);
+  }
+  100% {
+    transform : rotate(60deg) translate(-50% , -50%);
+  }
+}
+.area_error .ttl:after {
+  content: "error";
+  font: 600 16px/1em 'helvetica','noto sans japanese',sans-serif;
+  position: absolute;
+  bottom: 15px;
+  left: 101%;
+}
+.area_error .copy {
+  font: 900 24px/1em 'noto sans japanese',sans-serif;
+  margin: 0 0 30px;
+}
+.area_error .description {
+  text-align: center;
+  font: 500 16px/1.8em 'noto sans japanese',sans-serif;
+}
+.area_error [class*="btnarea"] {
+  margin: 30px 0 0;
+}
+
+
+/* ! ====================================================================================================
+　■ スライド管理
+==================================================================================================== */
+.area_slide{
+  background: #f4f4f4;
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.list_slide li + li{
+  margin: 8px 0 0;
+}
+.list_slide article{
+  background: #fff;
+  padding: 10px 36px 10px 10px;
+  border-radius: 4px;
+  box-shadow:0px 1px 3px 0px rgba(0,0,0,.2);
+  border: 2px solid transparent;
+  position: relative;
+  cursor: move;
+}
+.list_slide article:hover,
+.list_slide article:active{
+  border: 2px solid #47162C;
+}
+.list_slide article:before{
+  content: "";
+  background: url(../img/ico/ico_drug.svg) no-repeat center center !important;
+  background-size: contain !important;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.list_slide .layout_head{
+  margin: 20px 20px 0 0;
+}
+.list_slide .layout_body{
+  flex: 1 1 auto;
+  min-width: 10px;
+  display: flex;
+}
+.list_slide .layout_body .list{
+  flex: 1 1 auto;
+  min-width: 10px;
+}
+.list_slide [class*="btnarea"]{
+  flex-direction:column;
+  justify-content: flex-start;
+  margin: 0 0 0 10px;
+}
+.list_slide [class*="btn_"]{
+  min-width: 60px;
+  height: 28px;
+}
+
+/* 非公開 */
+.list_slide.private article{
+  box-shadow: 0 0 0 0;
+  cursor: auto;
+}
+.list_slide.private article:before{
+  display: none;
+}
+.list_slide.private article:hover,
+.list_slide.private article:active{
+  border: 2px solid transparent;
+}
+
+/*  */
+.area_slide > [class*="btnarea"]{
+  margin: 16px 0 0;
+}
+
+/* イメージ */
+.img_slide{
+  background-repeat:  no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+.img_slide:before{
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 30%;
+}
+
+/* イメージ */
+.img_slide[class*="sett"]{
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+.img_slide[class*="sett"]:before {
+	content: none;
+}
+.list_slide .layout_head[class*="sett"]{
+	margin: 0;
+}

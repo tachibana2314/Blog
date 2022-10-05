@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\NewsNotification::class,
     ];
 
     /**
@@ -24,7 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('news:notification')->dailyAt('10:00');
+        // シンガーポール時間
+        // $schedule->command('news:notification')
+        //     ->timezone('Asia/Singapore')
+        //     ->at('10:00');
     }
 
     /**
@@ -34,7 +38,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

@@ -1,0 +1,1119 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ 共通要素
+　　　-ボックス
+　　　-ヘッド_ボックス
+　　　-サムネイル
+
+　■ ページエリア
+  ■ 詳細ページ
+　■ テーブル
+　■ リスト
+  ■ 浮かせるリンク
+　■ タブ
+　■ ギャラリー
+
+---------------------------------------------------------------------------------------------------- */
+/* ! ====================================================================================================
+　■ 共通要素
+==================================================================================================== */
+/* ! ==================================================
+　ボックス
+================================================== */
+.box {
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.05);
+}
+.box + .box {
+    margin: 10px 0 0;
+}
+.row > .box + .box {
+    margin: 0 0 0 10px;
+}
+
+/* ! ボックス幅 ============================== */
+.box_400 {
+    max-width: 400px;
+}
+.box_600 {
+    max-width: 600px;
+}
+.box_800 {
+    max-width: 800px;
+}
+.box_1000 {
+    max-width: 1000px;
+}
+.box_1200 {
+    max-width: 1200px;
+}
+
+/* ! ボックス背景なし ============================== */
+.box.transparent {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* ! ==================================================
+　ヘッド_ボックス
+================================================== */
+.head_box {
+    margin: 0 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.head_box.col{
+  flex-direction:column;
+}
+.head_box .text {
+    margin: 0 20px 0 0;
+    width: 100%;
+}
+.head_box .btnarea {
+    margin: 0 0 0 auto;
+}
+
+
+.head_box .description {
+    margin: 20px 0 0;
+    font: 300 14px/1.4em 'noto sans japanese' , sans-serif;
+}
+.head_box .description .bold{
+  font-weight: 600;
+  color: #172858;
+}
+.head_box .description small{
+  color: #e43535;
+  font-weight: 500;
+}
+.head_box .area_description{
+  margin: 20px 0 0;
+}
+.head_box .area_description .description{
+  margin: 0;
+}
+
+/* ! ボックス_薄く ============= */
+.box.thin {
+    padding: 20px;
+}
+.head_box.thin {
+    margin: 0 0 10px;
+}
+
+/* ! タイトル ============================== */
+.area_ttl {
+    flex: 1 1 auto;
+    min-width: 10px;
+}
+.area_ttl.center {
+    text-align: center;
+}
+
+/* ! ==================================================
+　-ミドル_ボックス
+================================================== */
+.middle_box {
+    margin: 0 0 30px;
+}
+
+/* ! ==================================================
+　-ボディ_ボックス
+================================================== */
+.body_box + .body_box {
+    margin: 60px 0 0;
+}
+
+/* ! ==================================================
+　-フット_ボックス
+================================================== */
+.foot_box {
+    margin: 30px 0 0;
+}
+
+/* ! ==================================================
+　-サムネイル
+================================================== */
+[class*="thumb"] {
+    width: 100%;
+    display: block;
+    height: auto;
+    background: #000;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+[class*="thumb"][class*="round"] {
+    border-radius: 50%;
+    overflow: hidden;
+}
+[class*="thumb"]:before {
+    content: "";
+    display: block;
+    height: auto;
+    width: 100%;
+    padding-top: 100%;
+}
+
+/* ! ====================================================================================================
+　■ ページエリア
+==================================================================================================== */
+.area_page {
+}
+
+[class*="page_"][class*="600"] {
+    max-width: 600px;
+    margin: 0 auto;
+}
+[class*="page_"][class*="800"] {
+    max-width: 800px;
+    margin: 0 auto;
+}
+[class*="page_"][class*="1000"] {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ! ==================================================
+　ヘッド
+================================================== */
+.head_page {
+    margin: 0 0 30px;
+}
+.head_page .ttl {
+    padding: 0 0 0 50px;
+    position: relative;
+}
+.head_page .ttl:before {
+    content: "";
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* ! アイコン個別指定 —————————————————————————————— */
+.page_home .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_home.svg);
+}
+.page_products .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_product.svg);
+}
+.page_sales .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_sale.svg);
+}
+.page_users .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_user.svg);
+}
+.page_members .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_member.svg);
+}
+.page_markets .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_market.svg);
+}
+.page_contacts .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_contact.svg);
+}
+.page_informations .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_information.svg);
+}
+.page_masters .head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_master.svg);
+}
+.head_page .ttl:before {
+    background: url(../img/ico/ico_ttl_stamp.svg);
+}
+
+/* ! ページエリア ============================== */
+.area_ttl_page {
+    display: flex;
+    align-items: center;
+}
+.area_ttl_page .btnarea {
+    margin: 0 0 0 auto;
+}
+
+/* ! ==================================================
+　ボディ
+================================================== */
+
+/* ! ====================================================================================================
+　■ 詳細ページ
+==================================================================================================== */
+/* ! ==================================================
+　戻るボタンエリア
+================================================== */
+.area_back_page {
+    position: relative;
+}
+.area_back_page [class*="btn_"] {
+    min-width: 30px;
+    width: 30px;
+    background: #fff url(../img/ico/ico_form/ico_form_left.svg) no-repeat center
+        center;
+    background-size: 20px 20px !important;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+}
+.area_back_page [class*="btn_"]:hover {
+  background: #172858 url(../img/ico/ico_form/ico_form_left_white.svg) no-repeat center center !important;
+  background-size: 20px 20px !important;
+}
+
+/* ! ====================================================================================================
+　■ テーブル
+==================================================================================================== */
+/* ! ==================================================
+　ヘッド_テーブル
+================================================== */
+.head_table {
+    margin: 0 0 40px;
+}
+
+/* ! ==================================================
+　コントロールエリア
+================================================== */
+.area_control_table {
+    display: flex;
+    align-items: center;
+}
+
+/* ! ==================================================
+　カウント
+================================================== */
+.area_count_table {
+    margin: 0 auto 0 0;
+}
+.area_count_table .count {
+    color: #e33f62;
+    font: 700 30px/1em "helvetica", "noto sans japanese", sans-serif;
+}
+.area_count_table .count:after {
+    content: attr(data-after) "";
+    color: #000;
+    font: 300 16px/1em "helvetica", "noto sans japanese", sans-serif;
+    margin: 0 0 0 0.5em;
+}
+
+/* ! ==================================================
+　フィルター_テーブル
+================================================== */
+.area_filter_table {
+    margin: 0 20px 0 0;
+    display: flex;
+    position: relative;
+}
+.area_filter_table2 {
+    margin: 0 20px 0 0;
+    display: flex;
+    position: relative;
+}
+
+/* ! 検索ボックス ============================== */
+.wrap_search {
+    min-width: 240px;
+    position: relative;
+}
+.wrap_search > input {
+    padding-left: 30px;
+}
+.wrap_search:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/ico/ico_form/ico_form_search.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+/* ! フィルター ============================== */
+.wrap_filter {
+    margin: 0 0 0 5px;
+}
+.button_filter {
+    color: #172858;
+    font: 400 0.8rem/1em "helvetica", "noto sans japanese", sans-serif;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 110px;
+    padding: 0 0 0 35px;
+    border: 1px solid #172858;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.button_filter:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/ico/ico_form/ico_form_filter.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.button_filter2 {
+    color: #172858;
+    font: 400 0.8rem/1em "helvetica", "noto sans japanese", sans-serif;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 110px;
+    padding: 0 0 0 35px;
+    border: 1px solid #172858;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.button_filter2:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/ico/ico_form/ico_form_filter.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.wrap_filter [class*="btn_"][class*="ico"][class*="plus"] {
+    padding: 0 20px 0 13px;
+    min-width: 160px;
+}
+.wrap_filter [class*="btn_"][class*="ico"][class*="plus"]:before {
+    position: inherit;
+}
+
+/* ! フィルターが適用されている場合 —————————————————————————————— */
+.area_filter_table.filter_active .button_filter {
+    color: blue;
+    border-color: blue;
+}
+.area_filter_table.filter_active .button_filter:before {
+    background: blue;
+}
+
+/* ! フィルターが適用されている場合 —————————————————————————————— */
+.area_filter_table2.filter_active .button_filter2 {
+    color: blue;
+    border-color: blue;
+}
+.area_filter_table2.filter_active .button_filter2:before {
+    background: blue;
+}
+
+
+/* ! ==================================================
+　フィルターコンテンツ
+================================================== */
+.area_filter_cnt {
+    max-width: 360px;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ! ボタンエリア_フィルター ============================== */
+.btnarea_filter {
+    margin: 10px -2px 0;
+}
+.btnarea_filter > * {
+    margin: 2px;
+    flex: 1 1 0;
+    min-width: auto;
+}
+
+/* ! フィルター外を覆う —————————————————————————————— */
+.overlay_filter {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.overlay_filter2 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ! フィルターの表示 —————————————————————————————— */
+.filter_show .overlay_filter {
+    pointer-events: all;
+}
+.filter_show .area_filter_cnt {
+    opacity: 1;
+    top: 25px;
+    pointer-events: all;
+}
+
+.filter_show .overlay_filter2 {
+    pointer-events: all;
+}
+.filter_show .area_filter_cnt {
+    opacity: 1;
+    top: 25px;
+    pointer-events: all;
+}
+/* ! ==================================================
+　ページャー
+================================================== */
+.area_pager {
+    display: flex;
+    align-items: center;
+}
+
+/* ! カウント_ページャー ============================== */
+.count_pager {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 20px;
+    margin: 0 5px 0 0;
+    background: #f2f4f7;
+    border-radius: 3px;
+}
+.count_pager p {
+    color: #8e919e;
+    font: 700 14px/1em "helvetica", "noto sans japanese", sans-serif;
+}
+.count_pager .parameter:before {
+    content: "/";
+    display: inline-block;
+    margin: 0 0.3em;
+}
+
+/* ! リスト_ページャー ============================== */
+.list_pager {
+    display: flex;
+}
+.list_pager > li {
+    padding: 0 2px;
+}
+.list_pager a {
+    color: #8e919e;
+    font: 700 14px/1em "helvetica", "noto sans japanese", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    min-width: 30px;
+    border: 1px solid #b7bac9;
+    border-radius: 3px;
+}
+
+/* ! 前後 —————————————————————————————— */
+.list_pager .prev a:before,
+.list_pager .next a:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-size: 16px 16px !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+.list_pager .prev a:before {
+    background: url(../img/ico/ico_form/ico_form_left.svg);
+}
+.list_pager .next a:before {
+    background: url(../img/ico/ico_form/ico_form_right.svg);
+}
+
+/* ! カレント —————————————————————————————— */
+.list_pager .current a {
+    background: #f2f4f7;
+    border-color: #f2f4f7;
+    color: #8e919e;
+}
+
+/* ! ==================================================
+　テーブルの選択チェックボックス
+================================================== */
+.body_table > .area_control_table {
+    margin: 0 0 20px;
+}
+/* ! コントロールエリア ============================== */
+.list_button_action_checkbox {
+    display: flex;
+    margin: -3px;
+}
+.list_button_action_checkbox > li {
+    padding: 3px;
+}
+[class*="btn_"][class*="control"] {
+    color: #172858;
+    font: 300 0.8rem/1em "Avenir-Book", "noto sans japanese", sans-serif;
+    background: transparent;
+    min-width: auto;
+    border-color: #172858;
+    border-radius: 3px;
+    height: 24px;
+    padding: 0 1em;
+}
+[class*="btn_"][class*="control"]:hover {
+    color: #fff;
+    background: #172858;
+}
+
+/* ! ==================================================
+　テーブル
+================================================== */
+.table {
+    width: 100%;
+}
+.table thead {
+    border-bottom: 2px solid #000;
+}
+.table thead p {
+    font: 400 12px/1em "noto sans japanese", sans-serif;
+}
+.table tr {
+    border-bottom: 1px solid #f2f2f4;
+}
+/* ! ソート —————————————————————————————— */
+.table thead .sort {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 14px 0 0;
+}
+.table thead .sort:after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(../img/ico/ico_sort.svg) no-repeat center center !important;
+    background-size: contain !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.table thead .asc:after {
+    background: url(../img/ico/ico_sorted.svg) no-repeat center center !important;
+}
+.table thead .desc:after {
+    background: url(../img/ico/ico_sorted.svg) no-repeat center center !important;
+    transform: rotate(180deg);
+}
+
+/* リンクテキスト */
+.table .link {
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.table .link:hover {
+    color: #e33f62;
+}
+.table .ellipsis {
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ! 余白 —————————————————————————————— */
+.table thead th {
+    padding: 0 10px 10px;
+}
+.table tbody td {
+    padding: 5px 10px;
+}
+.table tr > th:first-of-type,
+.table tr > td:first-of-type {
+    padding-left: 0;
+}
+.table tr > th:last-of-type,
+.table tr > td:last-of-type {
+    padding-right: 0;
+}
+
+/* ! リンク —————————————————————————————— */
+.table.link tbody tr:hover {
+    background: #f2f4f7;
+    cursor: pointer;
+}
+
+/* ! ==================================================
+　テーブル内コンテンツ
+================================================== */
+/* ! 画像 —————————————————————————————— */
+.table .img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background: url(../img/sample/img_product_01.jpg) no-repeat center center;
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ! ステータス —————————————————————————————— */
+[class^="status_"] {
+}
+[class^="status_"]:before {
+    content: "";
+    color: #fff;
+    font: 400 12px/1em "helvetica", "noto sans japanese", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 16px;
+    border: 1px solid transparent;
+}
+[class^="status_"][class*="full"]:before {
+    width: 100%;
+}
+[class^="status_"][class*="large"]:before {
+    height: 30px;
+    font-size: 16px;
+}
+[class^="status_"][class*="larger"]:before {
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* グリーン */
+[class^="status_"][class*="green"]:before {
+    content: attr(data-before) "";
+    background: #e33f62;
+    border-color: #e33f62;
+}
+
+/* レッド */
+[class^="status_"][class*="red"]:before {
+    content: attr(data-before) "";
+    background: #e60012;
+    border-color: #e60012;
+}
+
+/* グレー */
+[class^="status_"][class*="gray"]:before {
+    content: attr(data-before) "";
+    background: #ccc;
+    border-color: #ccc;
+}
+
+/* 個別_車両ステータス */
+[class^="status_"][class*="visit"]:before {
+    content: "来店待ち";
+    background: #8e909e;
+    border-color: #8e909e;
+}
+[class^="status_"][class*="delivery"]:before {
+    content: "配送キット送付";
+    background: #eb8800;
+    border-color: #eb8800;
+}
+[class^="status_"][class*="waiting_assessment"]:before {
+    content: "査定待ち";
+    background: #e60012;
+    border-color: #e60012;
+}
+[class^="status_"][class*="support"]:before {
+    content: "個別対応中";
+    background: #36aee3;
+    border-color: #36aee3;
+}
+[class^="status_"][class*="approval"]:before {
+    content: "承認待ち";
+    background: #0f286c;
+    border-color: #0f286c;
+}
+[class^="status_"][class*="closed"]:before {
+    content: "クローズ";
+    color: #36aee3;
+    background: #fff;
+    border-color: #36aee3;
+}
+
+/* 個別_ユーザー */
+[class^="status_"][class*="general"]:before {
+    content: "一般";
+    background: #8e909e;
+    border-color: #8e909e;
+}
+/* 個別_対応 */
+[class^="status_"][class*="backlog"]:before {
+    content: "未対応";
+    background: #8e909e;
+    border-color: #8e909e;
+}
+
+/* 個別_車両ステータス */
+/* 空欄(仕入れ) */
+/* 販売中 */
+[class^="status_"][class*="sale"]:before {
+    content: "販売中";
+    background: #36aee3;
+    border-color: #36aee3;
+}
+/* 商談中 */
+[class^="status_"][class*="pending"]:before {
+    content: "商談中";
+    background: #eb8800;
+    border-color: #eb8800;
+}
+/* 受注済 */
+[class^="status_"][class*="backlog"]:before {
+    content: "受注済";
+    background: #ccc;
+    border-color: #ccc;
+}
+
+/* 個別_注文ステータス */
+[class^="status_"][class*="estimate"]:before {
+    content: "見積";
+    background: #ccc;
+    border-color: #ccc;
+}
+[class^="status_"][class*="order"]:before {
+    content: "受注";
+    background: #eb8800;
+    border-color: #eb8800;
+}
+
+/* 個別_保有 */
+[class^="status_"][class*="possession"]:before {
+    content: "保有";
+    color: #e33f62;
+    background: #f2f4f7;
+}
+
+/* 個別_公開 */
+[class^="status_"][class*="private"]:before {
+    content: "非公開";
+    color: #666;
+    background: #f2f4f7;
+}
+[class^="status_"][class*="release"]:before {
+    content: "公開";
+    color: #fff;
+    background: #e33f62;
+}
+[class^="status_"][class*="before"]:before {
+    content: "公開前";
+    color: #fff;
+    background: #5053ee;
+}
+[class^="status_"][class*="released"]:before {
+    content: "公開終了";
+    color: #666;
+    background: #f2f4f7;
+}
+[class^="status_"][class*="druft"]:before {
+    content: "下書き";
+    color: #fff;
+    background: #47162c;
+}
+
+/* ! ==================================================
+　フット_テーブル
+================================================== */
+.foot_table {
+    margin: 20px 0 0;
+}
+.foot_table .area_pager {
+    margin-left: auto;
+}
+
+/* ! ==================================================
+　テーブル_データ
+================================================== */
+.table_data {
+    width: 100%;
+}
+.table_data th,
+.table_data td {
+    padding: 4px 8px;
+}
+.table_data thead th p {
+    font: 500 13px/1.3em "noto sans japanese", sans-serif;
+}
+.table_data tbody {
+    border: 1px solid #ddd;
+}
+.table_data tbody th {
+    background: #f7f7f7;
+    width: 100px;
+}
+.table_data p {
+    font: 300 14px/1.3em "noto sans japanese", sans-serif;
+}
+.table_data td p {
+    font: 500 14px/1.3em "noto sans japanese", sans-serif;
+}
+.table_data tr + tr {
+    border-top: 1px solid #ddd;
+}
+
+/* ! ====================================================================================================
+　■ リスト
+==================================================================================================== */
+.list > li {
+    display: flex;
+    align-items: baseline;
+}
+.list > li + li {
+    margin: 12px 0 0;
+}
+.list > li > .head {
+    flex: 0 0 150px;
+}
+.list > li > .head > .ttl {
+    font: 300 13px/1em "noto sans japanese", sans-serif;
+}
+.list > li > .head > .ttl:after {
+    content: "：";
+}
+
+/* ヘッドサイズ */
+.list.head_100 > li .head {
+    flex: 0 0 100px;
+}
+.list.head_120 > li .head {
+    flex: 0 0 120px;
+}
+.list.head_140 > li .head {
+    flex: 0 0 140px;
+}
+.list.head_200 > li .head {
+    flex: 0 0 200px;
+}
+
+/* ! データ —————————————————————————————— */
+.list.head_120 > li .data {
+   flex: 1 1 auto;
+   min-width: 10px;
+}
+.list > li > .data > p,
+.list > li > .data > a {
+    font: 400 15px/1.5em "helvetica", "noto sans japanese", sans-serif;
+}
+.list > li > .data > a {
+    text-decoration: underline;
+}
+.list > li > .data > a:hover {
+    color: #e33f62;
+}
+.list > li > .data > .small {
+    font-size: 13px;
+}
+.list > li > .data > .large {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* ! 店舗詳細 —————————————————————————————— */
+.area_sales_detail .list{
+	margin: 0 35px 0 0;
+	flex: 1 1 auto;
+	min-width: 10px;
+}
+.area_sales_detail .list_right{
+	flex: 0 0 300px;
+	margin: 0;
+}
+
+
+/* ! ====================================================================================================
+　■ 浮かせるリンク　親要素にrelative
+==================================================================================================== */
+.link_float {
+    position: relative;
+}
+.link_float > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ! ====================================================================================================
+　■ タブ
+==================================================================================================== */
+.area_tab {
+    margin: 30px 0 0;
+}
+
+/* ! ==================================================
+　タブボタン
+================================================== */
+.list_tab_button {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #a2adc1;
+}
+
+/* ! ボタン ============================== */
+.button_tab {
+    color: #a2adc1;
+    padding: 0 30px 10px;
+    position: relative;
+}
+.button_tab:before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* ! ==================================================
+　タブパネル
+================================================== */
+.panel_tab {
+    display: none;
+}
+.panel_tab.show_tab {
+    display: block;
+}
+
+/* ! ====================================================================================================
+　■ 種類詳細ページ
+==================================================================================================== */
+/* ! ==================================================
+　銘柄情報
+================================================== */
+.area_brand_products {
+    align-items: center;
+    border-bottom: 3px solid #f2f4f7;
+    padding: 0 0 20px;
+    margin: 0 0 40px;
+}
+.area_brand_products .layout_head {
+    flex: 0 0 120px;
+}
+.area_brand_products .ttl {
+}
+
+/* ! ====================================================================================================
+　■ ギャララリー
+==================================================================================================== */
+.list_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+}
+.list_gallery > li {
+    width: 33.33%;
+    padding: 4px;
+}
+.list_gallery article {
+    position: relative;
+    cursor: pointer;
+}
+.list_gallery article[data-ttl]:before {
+    content: attr(data-ttl);
+    width: 100%;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 500 12px/1.3em "noto sans japanese", sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+.list_gallery .img,
+.main_gallery .img {
+    width: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.main_gallery_s .img {
+    width: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.list_gallery .img:before,
+.main_gallery .img:before {
+    content: "";
+    padding-top: 100%;
+    width: 100%;
+    display: block;
+}
+.list_gallery .img:before,
+.main_gallery_s .img:before {
+    content: "";
+    padding-top: 60%;
+    width: 100%;
+    display: block;
+}
+
+
+/* ! ====================================================================================================
+　■ マップ
+==================================================================================================== */
+.area_map_store {
+    margin: 30px 0 0;
+    position: relative;
+    width: 100%;
+    padding-top: 0px;
+    height: 100%;
+}
+.area_map_store iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

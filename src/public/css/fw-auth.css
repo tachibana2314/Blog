@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ ログインページ
+
+---------------------------------------------------------------------------------------------------- */
+/* ! ====================================================================================================
+　■ ログインページ
+==================================================================================================== */
+.page_login body {
+    background: url(../img/bg/bg_login_admin.jpg) no-repeat center center;
+    background-size: cover !important;
+}
+
+/* ! ==================================================
+　レイアウト
+================================================== */
+.layout_auth {
+    flex-direction: column;
+    padding: 30px;
+    width: 100%;
+}
+
+/* ! ==================================================
+　ヘッダー
+================================================== */
+.header_auth {
+}
+.header_auth img {
+  height: 26px;
+}
+
+/* ! ==================================================
+　メイン
+================================================== */
+.main_auth {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 10px;
+}
+
+/* ! ==================================================
+　フッター
+================================================== */
+.footer_auth {
+    display: flex;
+    align-items: flex-end;
+}
+.footer_auth .text {
+    margin: 0 0 0 auto;
+}
+.footer_auth .copyright {
+    color: #fff;
+    font: 400 13px/1em "helvetica", "noto sans japanese", sans-serif;
+}
+
+/* ! ==================================================
+　認証エリア
+================================================== */
+.area_auth {
+    max-width: 360px;
+    width: 100%;
+}
+
+/* ! ボックス —————————————————————————————— */
+.box_login {
+    background: transparent linear-gradient(180deg, #FFFFFFE6 0%, #FFFFFFF2 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+
+/* ! ==================================================
+　ログイン
+================================================== */
+/* ! ヘッド —————————————————————————————— */
+.head_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0;
+    margin: 0 0 40px;
+}
+.head_login .ttl {
+    font-size: 1.7rem;
+}
+.head_login .description {
+    font: 300 14px/1em "noto sans japanese", sans-serif;
+    margin: 12px 0 0;
+}
+
+/* ! ボディ —————————————————————————————— */
+.body_login .wrap_input + .wrap_input {
+    margin: 10px 0 0;
+}
+.body_login input {
+    height: 50px;
+    border-color: #dec3d2;
+}
+.body_login .btnarea_form {
+    margin: 10px 0 0;
+}
+.body_login [class^="btn_"] {
+    font: 700 15px/1em "noto sans japanese", sans-serif;
+    height: 50px;
+    background: #E44063;
+    border-color: #E44063;
+    color: #fff;
+    margin: 0;
+}
+.body_login [class^="btn_"]:hover{
+  opacity: .9;
+/*
+  color: #E44063;
+  background: #fff;
+*/
+}
+

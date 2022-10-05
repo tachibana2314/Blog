@@ -3,24 +3,13 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
     /**
@@ -28,16 +17,11 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/admin/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:admin')->except(['logout', 'showLoginForm']);
     }
 
     public function showLoginForm()
@@ -48,14 +32,9 @@ class LoginController extends Controller
         return view('admin.login');
     }
 
-    protected function guard()
+    public function guard()
     {
         return Auth::guard('admin');
-    }
-
-    public function username()
-    {
-        return 'staff_code';
     }
 
     public function logout(Request $request)
@@ -63,18 +42,13 @@ class LoginController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->flush();
         $request->session()->regenerate();
-
         return redirect('/admin/login');
     }
 
-    protected function authenticated(Request $request, $admin)
+    protected function sendFailedLoginResponse(Request $request)
     {
-        if (!$admin->is_admin) {
-            Auth::guard('admin')->logout();
-            return redirect('/attendance/login')->withErrors(['ログインできません。']);
-        }
-
-        // ログイン後のリダイレクト
-        return redirect()->intended($this->redirectPath());
+        throw ValidationException::withMessages([
+            'login_failed' => [trans('auth.failed')],
+        ]);
     }
 }

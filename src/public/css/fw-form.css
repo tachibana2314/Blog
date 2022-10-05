@@ -1,0 +1,875 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ フォーム
+　　　-基本パーツ
+      -セレクトボックス
+      -チェックボックス・ラジオ
+      -画像アップロード
+　　　-ユニット
+　　　-フォームラップ
+　■ フォームリスト
+  ■ ボタンエリア
+　■ ボタン
+　■ フラッシュ表示
+
+---------------------------------------------------------------------------------------------------- */
+/* ! ====================================================================================================
+　■ フォーム
+==================================================================================================== */
+/* ! フォームリセット ============================== */
+input,select,button,textarea{ -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0;}
+input[type="number"] { -moz-appearance:textfield;}
+button { outline: none;}
+select::-ms-expand { display: none;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px #fafafa inset;}
+input[type="checkbox"],input[type="radio"],input[type="file"]{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ! プレイスホルダー ============================== */
+input::-webkit-input-placeholder { color: #A2ADC1;}
+input:-ms-input-placeholder { color: #A2ADC1;}
+input::-moz-placeholder { color: #A2ADC1;}
+textarea::-webkit-input-placeholder { color: #A2ADC1;}
+textarea:-ms-input-placeholder { color: #A2ADC1;}
+textarea::-moz-placeholder { color: #A2ADC1;}
+
+/* ! ディスエイブルド ============================== */
+input:disabled {
+  background: #F2F4F7;
+  border-color: #F2F4F7;
+}
+
+
+
+/* ! ==================================================
+　基本パーツ
+================================================== */
+input,
+select,
+textarea {
+  font: 300 15px/1em 'helvetica','noto sans japanese',sans-serif;
+  padding: 0 10px;
+  background: #fff;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #172858;
+  border-radius: 3px;
+  flex: 1 1 auto;
+  min-width: 10px;
+}
+textarea{
+  padding: 8px 10px;
+  height: auto;
+  resize: none;
+}
+
+
+/* ! ==================================================
+　セレクトボックス
+================================================== */
+select {
+  width: 100%;
+  padding-right: 30px;
+  cursor: pointer;
+  color: #0A2372;
+}
+.wrap_select {
+  width: 100%;
+  position: relative;
+}
+.wrap_select:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(../img/ico/ico_form/ico_form_down.svg);
+  background-size: 18px 18px !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events:none;
+}
+
+/* 横幅 */
+[class*="wrap_select"][class*="_60"] {
+  max-width: 60px;
+}
+[class*="wrap_select"][class*="_80"] {
+  max-width: 80px;
+}
+[class*="wrap_select"][class*="_100"] {
+  max-width: 100px;
+}
+[class*="wrap_select"][class*="_140"] {
+  max-width: 140px;
+}
+[class*="wrap_select"][class*="_200"] {
+  max-width: 200px;
+}
+[class*="wrap_select"][class*="_300"] {
+  max-width: 300px;
+}
+
+[class*="wrap_input"][class*="_60"] {
+  max-width: 60px;
+}
+[class*="wrap_input"][class*="_80"] {
+  max-width: 80px;
+}
+[class*="wrap_input"][class*="_100"] {
+  max-width: 100px;
+}
+[class*="wrap_input"][class*="_140"] {
+  max-width: 140px;
+}
+[class*="wrap_input"][class*="_200"] {
+  max-width: 200px;
+}
+[class*="wrap_input"][class*="_300"] {
+  max-width: 300px;
+}
+
+
+
+
+/* ! ==================================================
+　セレクトボックス
+================================================== */
+.wrap_dd {
+}
+.area_dd {
+  border: 1px dashed #CDD7E5;
+  border-radius: 3px;
+  background: #F2F4F7;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height:  160px;
+}
+.area_dd .area_paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.wrap_dd .btnarea {
+  margin: 40px 0 0;
+  display: flex;
+  justify-content: center;
+}
+.wrap_dd .btnarea [class*="btn_"] {
+  max-width: 200px;
+}
+
+
+
+/* ! ==================================================
+　カレンダー表示
+================================================== */
+.wrap_calendar {
+  position: relative;
+}
+.wrap_calendar:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(../img/ico/ico_form/ico_form_calendar.svg) no-repeat center center;
+  background-size: 24px 24px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrap_calendar input {
+  padding-left: 30px;
+}
+
+
+.timepicker #picker{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ! ==================================================
+　チェックボックス・ラジオ
+================================================== */
+/* ! 共通項目 ============================== */
+.wrap_checkbox,
+.wrap_radio {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+.wrap_checkbox label,
+.wrap_radio label {
+  font: 300 13px/1em 'noto sans japanese',sans-serif;
+  padding: 0 0 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+.wrap_checkbox label:before,
+.wrap_checkbox label:after,
+.wrap_radio label:before,
+.wrap_radio label:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #172858;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+/* ! 消す —————————————————————————————— */
+.delete_sub_image {
+	max-width: 17px;
+  max-height: 17px;
+  border: 1px solid #172858;
+  border-radius: 3px;
+  font: 300 14px/1em "noto sans japanese", sans-serif;
+}
+.delete_sub_image:hover{
+	color: #fff;
+	background: #47172D;
+	border: 1px solid #47172D;
+}
+/* ! 消す —————————————————————————————— */
+.delete_barcode_image {
+	max-width: 17px;
+  max-height: 17px;
+  border: 1px solid #172858;
+  border-radius: 3px;
+  font: 300 14px/1em "noto sans japanese", sans-serif;
+}
+.delete_barcode_image:hover{
+	color: #fff;
+	background: #47172D;
+	border: 1px solid #47172D;
+}
+/* ! カレント —————————————————————————————— */
+input[type=checkbox]:checked + label::after,
+input[type=radio]:checked + label::after {
+  display: block;
+}
+
+
+/* ! チェックボックス個別指定 ============================== */
+.wrap_checkbox label:after {
+  border-color: blue;
+  background: blue;
+  display: none;
+}
+
+
+
+/* ! ラジオ個別指定 ============================== */
+.wrap_radio label:before,
+.wrap_radio label:after {
+  border-radius: 50%;
+}
+.wrap_radio label:after {
+  border-color: blue;
+  background: blue;
+  border-radius: 50%;
+  display: none;
+  transform:scale(.6) translateY(-50%);
+  transform-origin: top center;
+}
+
+
+/* ! 選択デザイン ============================== */
+/* 横並び時用 */
+input[type="checkbox"] + label,
+input[type="radio"] + label{
+  margin-right: 1em;
+}
+
+
+/* ! ==================================================
+　画像アップロード
+================================================== */
+.wrap_img label{
+  display: block;
+  width: 120px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.wrap_img label:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 100%;
+  background: rgba(23,40,88,.2) url(../img/logo/logo.svg) no-repeat center center;
+  background-size: 35px 35px !important;
+  border: 1px solid #172858;
+  border-radius: 5px;
+}
+
+/* バーコード・クーポン */
+.wrap_img_w label{
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+/*   margin: 0 10px; */
+}
+.wrap_img_w label:before {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 100px;
+  /* padding-top: 100%; */
+  background: rgba(23,40,88,.2) url(../img/logo/logo.svg) no-repeat center center;
+  background-size: 35px 35px !important;
+  border: 1px solid #172858;
+  border-radius: 5px;
+}
+
+
+/* ! ==================================================
+　フォームラップ
+================================================== */
+[class*="wrap_input"] {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+/* 住所などインプット要素を縦に並べる場合に仕様 */
+[class*="wrap_input"][class*="col"] {
+  flex-direction: column;
+}
+[class*="wrap_input"] + [class*="wrap_input"] {
+  margin: 5px 0 0;
+}
+
+[class*="wrap_input"][class*="100"]  {
+  flex: 0 0 100px;
+}
+
+[class*="wrap_input"] p {
+  width: 100%;
+}
+[class*="wrap_input"][class*="right"] > * {
+  text-align: right;
+}
+
+
+/* ! ==================================================
+　ユニット
+================================================== */
+[class*="unit_"] {
+  color: #000;
+  font: 300 13px/1em 'noto sans japanese',sans-serif;
+  padding: 0 .5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+}
+[class*="unit_min"] { flex: 0 0 .5em; padding: 0; }
+[class*="unit_1"] { flex: 0 0 2.5em; }
+[class*="unit_2"] { flex: 0 0 3.5em; }
+[class*="unit_3"] { flex: 0 0 4.5em; }
+[class*="unit_4"] { flex: 0 0 5.5em; }
+[class*="unit"][class*="left"] { justify-content: flex-start;}
+[class*="unit"][class*="right"] { justify-content: flex-end;}
+[class *="unit"][class*="center"] { justify-content: center;}
+
+
+
+
+/* ! ====================================================================================================
+　■ フォームリスト
+==================================================================================================== */
+.list_form > li {
+  display: flex;
+  align-items: flex-start;
+}
+.list_form > li + li {
+  margin: 20px 0 0;
+}
+.list_form .form_head {
+  flex: 0 0 120px;
+}
+.list_form .form_head > .ttl {
+  font: 300 14px/1em 'noto sans japanese',sans-serif;
+  position: relative;
+  padding: 0 0 0 10px;
+}
+.list_form .form_head > .ttl:after {
+  content: "：";
+}
+.list_form .form_data {
+  flex: 1 1 auto;
+  min-width: 10px;
+}
+.list_form.head_140 .form_head {
+  flex: 0 0 140px;
+}
+.form_data .term{
+	margin: 15px 0 0;
+}
+/* 必須・任意表示 */
+[class*="list_form"] .form_ttl:before {
+    display: none;
+}
+[class*="list_form"][class*="required"] .form_ttl:before {
+    display: block;
+}
+.required .ttl:before {
+    content: "*";
+    font: 600 12px/1em "noto sans japanese", sans-serif;
+    text-align: center;
+    color: #e60347;
+    display: inline-block;
+    padding: 2px 0;
+    min-height: 1px;
+    margin: 0 8px 0 0;
+    position: absolute;
+    top: 0;
+
+    left: 0;
+}
+
+/* 任意・必須項目不要なケース */
+.required_none .ttl :before {
+    content: "";
+    opacity: 0;
+}
+
+/* ! ====================================================================================================
+　■ ボタンエリア
+==================================================================================================== */
+[class*="btnarea"] {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -3px;
+}
+[class*="btnarea_"][class*="right"] {
+  justify-content: flex-end;
+}
+[class*="btnarea_"][class*="center"] {
+  justify-content: center;
+}
+[class*="btnarea"] > * {
+  margin: 3px;
+}
+
+[class*="btnarea"][class*="column"]{
+  flex-direction: column;
+}
+[class*="btnarea"][class*="row"][class*="full"]{
+  margin: -10px;
+}
+[class*="btnarea"][class*="row"][class*="full"] > *{
+  margin: 10px;
+  flex: 1 1 auto;
+  height: 60px;
+  font: 600 16px/1.3em 'noto sans japanese',sans-serif;
+}
+
+[class*="btnarea"][class*="_200"] > [class*="btn_"] {
+  max-width: 200px;
+}
+
+/* 下部にスペース */
+[class*="btnarea_"][class*="space-bottom"] {
+  margin-bottom: 20px;
+}
+
+
+/* ! ==================================================
+　フォームボタンエリア
+================================================== */
+.btnarea_form {
+  width: 100%;
+  margin: 40px 0 0;
+  padding: 0 0 30px;
+  justify-content: center;
+}
+.btnarea_form > [class*="btn_"] {
+  margin: 2px;
+}
+.btnarea_form > .btnarea {
+  margin: 30px 0 0;
+}
+
+
+/* ! ====================================================================================================
+　■ ボタン
+==================================================================================================== */
+[class*="btn_"] {
+  color: #47172D;
+  font: 400 .85rem/1em 'helvetica','noto sans japanese',sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 30px;
+  padding: 0 1em;
+  background: #DEC3D2;
+  border: 1px solid #47172D;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  transition: .1s;
+}
+[class*="btn_"]:hover{
+  color: #fff;
+  background: #47172D;
+}
+
+/* ! ボタン_レッド ============================== */
+[class*="btn_"][class*="red"] {
+  color: #e43535;
+  border-color: #e43535;
+  background: #fdf2f2;
+}
+[class*="btn_"][class*="red"]:hover {
+  color: #fff;
+  background: #e43535;
+}
+
+/* ! ボタン_ネイビー ============================== */
+[class*="btn_"][class*="navy"] {
+  color: #fff;
+  border-color: #172858;
+  background: #172858;
+}
+[class*="btn_"][class*="navy"]:hover {
+  color: #172858;
+  background: #fff;
+  border-color: #172858;
+}
+
+/* ! ボタン_グレー ============================== */
+[class*="btn_"][class*="gray"] {
+  color: #666;
+  border-color: #cecece;
+  background: #f5f5f5;
+}
+[class*="btn_"][class*="gray"]:hover {
+  background: #fff;
+}
+
+
+/* ! ボタン_ライン ============================== */
+[class*="btn_"][class*="line"] {
+  color: #47172D;
+  background: #fff;
+}
+[class*="btn_"][class*="line"]:hover{
+  color: #fff;
+  background: #47172D;
+}
+
+
+[class*="btn_"][class*="line"][class*="navy"] {
+  color: #172858;
+  border-color: #172858;
+}
+
+[class*="btn_"][class*="line"][class*="navy"]:hover{
+  color: #fff;
+  background: #172858;
+}
+
+
+
+/* ! ボタン_ゴースト ============================== */
+[class*="btn_"][class*="goast"] {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+}
+[class*="btn_"][class*="goast"]:hover {
+  color: #36AEE3;
+  border-color: #36AEE3;
+}
+
+/* ! 透明ボタン 文字だけ ============================== */
+[class*="btn_"][class*="transparent"][class*="red"] {
+  color: #000;
+  background: transparent;
+  border-color: transparent;
+}
+[class*="btn_"][class*="transparent"][class*="blue"] {
+  color: #3162E1;
+  background: transparent;
+  border-color: transparent;
+}
+
+
+/* ! ボタン_狭く ============================== */
+[class*="btn_"][class*="narrow"] {
+  min-width: 0;
+}
+
+/* ! ボタン_厚く ============================== */
+[class*="btn_"][class*="thick"] {
+  height: 40px;
+  font: 600 13px/1.3em 'noto sans japanese',sans-serif;
+}
+[class*="btn_"][class*="very"][class*="thick"] {
+  height: 80px;
+  font: 600 16px/1.3em 'noto sans japanese',sans-serif;
+}
+
+/* ! フルサイズ ============================== */
+[class*="btn_"][class*="full"] {
+  max-width: none;
+  width: 100%;
+}
+
+
+/* ! アイコン ============================== */
+[class*="btn_"][class*="ico"] {
+  padding-left: 30px;
+  position: relative;
+}
+[class*="btn_"][class*="ico"]:before{
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-size: 24px 24px !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  transform: translateY(-50%);
+}
+[class*="btn_"][class*="ico"][class*="plus"]:before {
+  background: url(../img/ico/ico_form/ico_form_plus_purple.svg);
+}
+[class*="btn_"][class*="ico"][class*="plus"]:hover:before {
+  background: url(../img/ico/ico_form/ico_form_plus_white.svg);
+}
+
+
+/* ! キューブボタン ============================== */
+[class*="btn_"][class*="cube"] {
+  width: 30px;
+  min-width: 0;
+  background: #172858;
+  border-color: #172858;
+}
+[class*="btn_"][class*="cube"]:hover {
+  background: #fff;
+}
+[class*="btn_"][class*="cube"][class*="plus"] {
+  background: #172858 url(../img/ico/ico_form/ico_form_plus_white.svg);
+  background-size: 24px 24px; !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+[class*="btn_"][class*="cube"][class*="plus"]:hover {
+  background: #fff url(../img/ico/ico_form/ico_form_plus.svg);
+  background-size: 24px 24px; !important;
+}
+[class*="btn_"][class*="cube"][class*="minus"] {
+  background: #172858 url(../img/ico/ico_form/ico_form_minus_white.svg);
+  background-size: 24px 24px; !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+[class*="btn_"][class*="cube"][class*="minus"]:hover {
+  background: #fff url(../img/ico/ico_form/ico_form_minus.svg);
+  background-size: 24px 24px; !important;
+}
+
+[class*="wrap_input"] > [class*="btn_"] {
+  min-width: auto;
+}
+
+
+
+/* ! ==================================================
+　テキストボタン
+================================================== */
+[class*="button"] {
+  color: #47172D;
+  font: 400 .8rem/1em 'helvetica','noto sans japanese',sans-serif;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+
+
+/* ! ====================================================================================================
+　■ フラッシュ表示
+==================================================================================================== */
+.area_flash {
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+/* ! ==================================================
+　リスト
+================================================== */
+.list_flash {
+  width: 350px;
+}
+.list_flash > li {
+  opacity: 0;
+  pointer-events: all;
+}
+.list_flash > li + li {
+  margin: 4px 0 0;
+}
+.list_flash article {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 10px 0 60px;
+  border-radius: 3px;
+  border: 2px solid #0F286C;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,.05);
+  position: relative;
+}
+.list_flash article:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../img/ico/ico_ttl_home.svg);
+  background-size: 30px 30px !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.list_flash p {
+  font: 400 14px/1.4em 'noto sans japanese',sans-serif;
+  max-height: 2.8em;
+  overflow: hidden;
+}
+
+
+/* 個別 */
+.list_flash .flash_info article{ border-color: #152C58;}
+.list_flash .flash_info article:before { background: url(../img/ico/ico_flash/ico_flash_info.svg);}
+.list_flash .flash_success article{ border-color: #47172D;}
+.list_flash .flash_success article:before { background: url(../img/ico/ico_flash/ico_flash_success.svg);}
+.list_flash .flash_warning article{ border-color: #F29938;}
+.list_flash .flash_warning article:before { background: url(../img/ico/ico_flash/ico_flash_warning.svg);}
+.list_flash .flash_error article{ border-color: #E60012;}
+.list_flash .flash_error article:before { background: url(../img/ico/ico_flash/ico_flash_error.svg);}
+
+
+/* ! キーフレーム ============================== */
+.list_flash > li{
+  animation: flash 4s ease forwards;
+}
+.list_flash > li:nth-of-type(2){ animation-delay: .1s;}
+.list_flash > li:nth-of-type(3){ animation-delay: .2s;}
+.list_flash > li:nth-of-type(4){ animation-delay: .3s;}
+.list_flash > li:nth-of-type(5){ animation-delay: .4s;}
+.list_flash > li:nth-of-type(6){ animation-delay: .5s;}
+.list_flash > li:nth-of-type(7){ animation-delay: .6s;}
+@keyframes flash {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  89% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  90% {
+    height: 60px;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+    height: 0;
+  }
+}
+
+/* 自動で消えないように */
+.list_flash > .flash_fixed {
+  animation: flash_fixed .5s ease forwards;
+}
+@keyframes flash_fixed {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* クリックして消す場合。 */
+.list_flash > .flash_remove {
+  animation: flash_remove .5s ease forwards;
+  pointer-events: none;
+  cursor: default;
+}
+@keyframes flash_remove {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  90% {
+    height: 60px;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+    height: 0;
+  }
+}
+
+
+/* アレルギー */
+.list_allergies {
+	display: flex;
+  flex-flow: wrap;
+}
+.list_allergies > li{
+	margin: 0 0 10px;
+}

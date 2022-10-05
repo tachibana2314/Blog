@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 
 class Handler extends ExceptionHandler
 {
@@ -22,20 +24,38 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontFlash = [
-        'current_password',
         'password',
         'password_confirmation',
     ];
 
     /**
-     * Register the exception handling callbacks for the application.
+     * Report or log an exception.
      *
+     * @param  \Exception  $exception
      * @return void
      */
-    public function register()
+    public function report(Exception $exception)
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        parent::report($exception);
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, Exception $exception)
+    {
+        // TODO: エラーログ出力
+        Log::error($exception);
+        // APIリクエストの場合レスポンスをJSON形式に変更
+        if ($request->is('api/*')) {
+            $status = $this->isHttpException($exception) ? $exception->getStatusCode() : 500;
+            return new JsonResponse(null, $status);
+             // MEMO: return new JsonResponse($exception->getMessage(), $status);
+        }
+        return parent::render($request, $exception);
     }
 }

@@ -2,43 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Content;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $contents = Content::published()->paginate(1);
-        $tag = null;
-
-        return view('web.home.index',[
-            'contents' => $contents,
-            'tag' => $tag
-        ]);
+        $this->middleware('auth')->except(['privacy', 'links']);
     }
 
-
-    public function profile()
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        $content = Content::find(1);
-        $contents = Content::all();
-
-        return view('web.single.index',[
-            'content' => $content,
-            'contents' => $contents
-        ]);
+        return view('home');
     }
 
-
-    public function contact()
+    /**
+     * プライバシーポリシー
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function privacy()
     {
-        $content = Content::find(1);
-        $contents = Content::all();
-        return view('web.contact.index',[
-            'content' => $content,
-            'contents' => $contents
-        ]);
+        return view('privacy');
     }
 
+    /**
+     * ユニバーサルリンク用
+     */
+    public function links(Request $request)
+    {
+        $page = $request->get('page');
+        $id = $request->get('id');
+        $link = "chateraise-app-sg://?page={$page}&id={$id}";
+
+        return view('links', [
+            'link' => $link,
+        ]);
+    }
 }

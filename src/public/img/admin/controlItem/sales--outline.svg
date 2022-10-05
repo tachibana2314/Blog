@@ -1,9 +1,0 @@
-<svg id="paid_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g id="グループ_2240" data-name="グループ 2240">
-    <rect id="長方形_1876" data-name="長方形 1876" width="24" height="24" fill="none"/>
-  </g>
-  <g id="グループ_2241" data-name="グループ 2241">
-    <path id="パス_1976" data-name="パス 1976" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.011,8.011,0,0,1,12,20Z" fill="#91a6be"/>
-    <path id="パス_1982" data-name="パス 1982" d="M-.9,0H.918V-2.465H3.451V-3.587H.918V-4.4H3.451V-5.525H1.411l3.23-6.613H2.7L0-6.324l-2.686-5.814H-4.607l3.213,6.613H-3.417V-4.4H-.9v.816H-3.417v1.122H-.9Z" transform="translate(12 19)" fill="#91a6be"/>
-  </g>
-</svg>

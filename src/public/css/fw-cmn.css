@@ -1,0 +1,368 @@
+@charset "UTF-8";
+/* ! Frame Work Style ----------------------------------------------------------------------------------------------------
+
+　■ 基本項目
+　■ テキスト
+　■ ヘッダー
+　■ サイドバー
+　■ メイン
+　■ フッター
+
+---------------------------------------------------------------------------------------------------- */
+/* ! Helvetica —————————————————————————————— */
+@font-face {
+    font-family: "helvetica";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../font/Helvetica-Light.ttf") format("ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: "helvetica";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/Helvetica.ttf") format("ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: "helvetica";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/Helvetica-Bold.ttf") format("ttf");
+    font-display: swap;
+}
+/* ! NotoSans —————————————————————————————— */
+@font-face {
+    font-family: "noto sans japanese";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../font/NotoSansJP-Light.woff") format("woff");
+    font-display: swap;
+}
+@font-face {
+    font-family: "noto sans japanese";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/NotoSansJP-Regular.woff") format("woff");
+    font-display: swap;
+}
+@font-face {
+    font-family: "noto sans japanese";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../font/NotoSansJP-Medium.woff") format("woff");
+    font-display: swap;
+}
+@font-face {
+    font-family: "noto sans japanese";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/NotoSansJP-Bold.woff") format("woff");
+    font-display: swap;
+}
+@font-face {
+    font-family: "noto sans japanese";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../font/NotoSansJP-Black.woff") format("woff");
+    font-display: swap;
+}
+/* ! ====================================================================================================
+　■ 基本項目
+==================================================================================================== */
+html {
+    min-height: 100vh;
+    display: flex;
+    min-width: 1200px;
+}
+body {
+    font-size: 16px;
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 1px;
+    background: #f3f1f1;
+    min-height: 100vh;
+}
+body.demo{
+  background: #f3f1f1 url(../img/bg/bg__demo.png)repeat left top;
+  background-size: 120px 120px !important;
+}
+body.demo--hk{
+  background: #f3f1f1 url(../img/bg/bg__demo--hk.png)repeat left top;
+}
+body.demo--sg{
+  background: #f3f1f1 url(../img/bg/bg__demo--sg.png)repeat left top;
+}
+.container {
+    padding: 0 40px;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+/* ! ====================================================================================================
+　■ テキスト
+==================================================================================================== */
+p {
+    font: 300 0.9rem/1.7em "helvetica", "noto sans japanese", sans-serif;
+    letter-spacing: 0.04em;
+}
+a {
+    color: #000;
+    font: 300 14px/1.5em "noto sans japanese", sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+.h1 {
+    font: 700 2rem/1em "noto sans japanese", sans-serif;
+}
+.h2 {
+    font: 700 1.5rem/1.5em "noto sans japanese", sans-serif;
+}
+.h3 {
+    font: 700 1.1rem/1.5em "noto sans japanese", sans-serif;
+}
+.h4 {
+    font: 500 0.8rem/1.5em "noto sans japanese", sans-serif;
+}
+.h4 {
+    font: 500 0.75rem/1.5em "noto sans japanese", sans-serif;
+}
+.num {
+    font: 700 20px/1em "helvetica", "noto sans japanese", sans-serif;
+}
+.num[data-before]:before {
+    content: attr(data-before) "";
+    font: 300 14px/1em "noto sans japanese", sans-serif;
+}
+
+/* ! ====================================================================================================
+　■ ヘッダー
+==================================================================================================== */
+.header {
+}
+
+/* ! ==================================================
+　ロゴエリア
+================================================== */
+.area_logo .logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 100px;
+}
+.area_logo img {
+    height: 64px;
+    width: 120px;
+}
+
+/* サイドバー minの場合 */
+.aside_min .area_logo .logo {
+    align-items: flex-start;
+    padding: 15px 0 0;
+}
+.aside_min .area_logo img {
+    height: 24px;
+}
+
+/* アラート */
+[role="alert"].invalid-feedback {
+    display: inline-block;
+    margin: 4px 0;
+}
+[role="alert"].invalid-feedback strong {
+    color: #e60347;
+    font: 500 13px/1em "noto sans japanese", sans-serif;
+    letter-spacing: 0.04em;
+    display: block;
+}
+
+/* ! ====================================================================================================
+　■ サイドバー
+==================================================================================================== */
+.aside {
+    background: #fff;
+}
+
+/* ! ==================================================
+　ナビ
+================================================== */
+.area_nav_aside {
+    margin: 10px 0 0;
+}
+
+/* ! リスト ============================== */
+.list_nav_aside > li {
+}
+.list_nav_aside > li + li {
+    margin: 30px 0 0;
+}
+.list_nav_aside a {
+    color: #a2adc1;
+    font: 300 14px/1em "noto sans japanese", sans-serif;
+    letter-spacing: 0.04em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 12px;
+    position: relative;
+    transition: .2s;
+}
+.list_nav_aside a:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #a2adc1;
+    margin: 0 8px 0 0;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+}
+.list_nav_aside > li a:hover {
+  color: #000;
+}
+.list_nav_aside a > span {
+  width: calc(100% - 40px);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ! カレント —————————————————————————————— */
+.list_nav_aside .current a {
+    color: #000;
+    font-weight: 400;
+}
+.list_nav_aside .current a:before {
+    background: #000;
+}
+.list_nav_aside .current a:after {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background: #0d9991;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* ! サイドバー min の場合 ============================== */
+.aside_min .list_nav_aside a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.aside_min .list_nav_aside a:before {
+    margin: 0;
+}
+.aside_min .list_nav_aside .tag {
+    display: block;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 48px;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.1s ease;
+    pointer-events: none;
+}
+.aside_min .list_nav_aside a:hover .tag {
+    opacity: 1;
+}
+.aside_min .list_nav_aside .tag span {
+    color: #fff;
+    font: 400 12px/1em "noto sans japanese", sans-serif;
+    background: #311905;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 20px;
+    padding: 0 5px 0 0;
+    position: relative;
+}
+.aside_min .list_nav_aside .tag span:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8px 10px 0;
+    border-color: transparent #311905 transparent transparent;
+    position: absolute;
+    top: 0;
+    left: -8px;
+}
+
+/* ! ====================================================================================================
+　■ メイン
+==================================================================================================== */
+.main {
+    margin: 0 auto;
+}
+
+/* ! ==================================================
+　ヘッド_メイン
+================================================== */
+.area_nav_main {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+/* ! ==================================================
+　パンクズ
+================================================== */
+.area_bread {
+}
+
+/* ! リスト_パンクズ ============================== */
+.list_bread {
+    display: flex;
+}
+.list_bread > li {
+    position: relative;
+}
+.list_bread > li + li {
+    padding: 0 0 0 20px;
+}
+.list_bread > li + li:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url(../img/ico/ico_form/ico_form_right.svg) no-repeat center
+        center;
+    background-size: contain !important;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+.list_bread a {
+    color: #a2adc1;
+    font: 200 12px/1em "noto sans japanese", sans-serif;
+    letter-spacing: 0.04em;
+    display: block;
+}
+
+/* ! ==================================================
+　ユーザーエリア
+================================================== */
+.area_user {
+    margin: 0 0 0 auto;
+}
+.area_user .button {
+    color: #000;
+    font: 300 12px/1em "noto sans japanese", sans-serif;
+    display: block;
+}
+
+/* ! ====================================================================================================
+　■ フッター
+==================================================================================================== */

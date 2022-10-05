@@ -1,0 +1,15 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "3T2DK6PBMQ.co.getz.chateraisesg" ],
+             "components": [
+               {
+                  "/": "/links/*",
+                  "comment": "Matches any URL whose path starts with /buy/"
+               }
+             ]
+           }
+       ]
+   },
+}
